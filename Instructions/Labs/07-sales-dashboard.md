@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Build a sales dashboard'
+    title: 'Lab 7 - Build a sales dashboard'
     description: 'Create a personal sales dashboard in Dynamics 365 Sales so Contoso leadership can track pipeline health, revenue, and deal activity in real time — no spreadsheet required.'
     duration: '25 minutes'
     level: 200
     islab: true
 ---
 
-# Build a sales dashboard
+# Lab 7 - Build a sales dashboard
 
 Every Monday at 9 AM, Priya chairs the weekly pipeline review. Until now, someone on Marcus Webb's sales ops team has spent Sunday evening pulling data from individual rep spreadsheets, copying numbers into a shared deck, and praying nothing changed overnight.
 

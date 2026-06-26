@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Extend Dynamics 365 Sales with Power Platform'
+    title: 'Lab 8 - Extend Dynamics 365 Sales with Power Platform'
     description: 'Use Power Automate and Copilot Studio to extend Dynamics 365 Sales with automated workflows and an AI-powered sales coaching agent for Contoso Coffee.'
     duration: '35 minutes'
     level: 200
     islab: true
 ---
 
-# Extend Dynamics 365 Sales with Power Platform
+# Lab 8 - Extend Dynamics 365 Sales with Power Platform
 
 Marcus Webb, Contoso Coffee's sales operations manager, has a running list of manual tasks that cost the team hours every week:
 

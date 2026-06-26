@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Configure Dynamics 365 Sales'
+    title: 'Lab 1 - Configure Dynamics 365 Sales'
     description: 'Set up the foundational configuration for Contoso Coffee, including creating sales team users, sales territories, auto-numbering, and Copilot summarization.'
     duration: '50 minutes'
     level: 200
     islab: true
 ---
 
-# Configure Dynamics 365 Sales
+# Lab 1 - Configure Dynamics 365 Sales
 
 Contoso Coffee has a brand-new Dynamics 365 Sales environment, and right now, it's a blank slate. Before any seller can open a lead or close a deal, the system needs to reflect how Contoso actually operates: four regional teams, consistent record numbering, and AI-powered summaries that save reps time on every record they open.
 

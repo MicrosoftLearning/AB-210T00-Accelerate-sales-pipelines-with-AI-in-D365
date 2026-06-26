@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Close deals using AI agents'
+    title: 'Lab 6 - Close deals using AI agents'
     description: "Configure the Sales Opportunity Agent and Sales Close Agent in Dynamics 365 Sales to automatically research pipeline risk and send follow-up emails on Contoso Coffee's behalf."
     duration: '45 minutes'
     level: 300
     islab: true
 ---
 
-# Close deals using AI agents
+# Lab 6 - Close deals using AI agents
 
 > **Note**: The Sales Opportunity Agent and Sales Close Agent are **preview features** that require a Dynamics 365 Sales Premium license. The Sales Close Agent additionally requires Microsoft Entra Application Developer permissions and Exchange Administrator access to complete the prerequisite setup. These features may not be fully available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the required features aren't available in your environment, review the steps to understand the configuration process and proceed to Lab 07.
 

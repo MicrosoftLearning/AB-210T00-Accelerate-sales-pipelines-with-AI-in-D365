@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Use the Sales Qualification Agent'
+    title: 'Lab 3 - Use the Sales Qualification Agent'
     description: 'Configure the Dynamics 365 Sales Qualification Agent to automatically research leads and hand off qualified prospects to sellers — reducing manual research time for Contoso Coffee.'
     duration: '40 minutes'
     level: 300
     islab: true
 ---
 
-# Use the Sales Qualification Agent
+# Lab 3 - Use the Sales Qualification Agent
 
 > **Note**: The Sales Qualification Agent requires a **Dynamics 365 Sales Premium** or **Microsoft 365 Copilot** license with Copilot Studio capacity. This feature may not be available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the feature isn't available in your environment, review the steps to understand the configuration process and move on to Lab 04.
 
