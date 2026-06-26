@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Manage leads in Dynamics 365 Sales'
+    title: 'Lab 2 - Manage leads in Dynamics 365 Sales'
     description: "Create and import leads, review them with Copilot, and qualify a lead to create an opportunity — using data from Contoso Coffee's most recent trade show."
     duration: '35 minutes'
     level: 200
     islab: true
 ---
 
-# Manage leads in Dynamics 365 Sales
+# Lab 2 - Manage leads in Dynamics 365 Sales
 
 Contoso Coffee just returned from **FoodService Summit Denver**, a three-day food service and hospitality industry trade show. Their booth team collected 47 business cards and badge scans from prospects interested in upgrading their commercial coffee and espresso equipment. Those contacts are currently sitting in a spreadsheet on the event manager's laptop — not in Dynamics 365, not assigned to any rep, and not being followed up on.
 

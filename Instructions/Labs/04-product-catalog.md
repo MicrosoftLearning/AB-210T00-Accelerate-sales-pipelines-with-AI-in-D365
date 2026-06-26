@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Set up the product catalog'
+    title: 'Lab 4 - Set up the product catalog'
     description: "Build Contoso Coffee's product catalog in Dynamics 365 Sales, including unit groups, products, price lists, and volume discount tiers."
     duration: '40 minutes'
     level: 200
     islab: true
 ---
 
-# Set up the product catalog
+# Lab 4 - Set up the product catalog
 
 Last month, a rep in the West region quoted a hotel chain $350 per month to lease a commercial espresso machine. Two weeks later, a rep in the Northeast quoted a different hotel chain $290 per month for the same model. When the first client found out, they were furious — and the West region rep had to go back and renegotiate.
 

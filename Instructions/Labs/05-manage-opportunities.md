@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Manage opportunities in Dynamics 365 Sales'
+    title: 'Lab 5 - Manage opportunities in Dynamics 365 Sales'
     description: 'Track a complex enterprise deal end-to-end in Dynamics 365 Sales — adding products, stakeholders, and competitor data — then close it as won.'
     duration: '40 minutes'
     level: 200
     islab: true
 ---
 
-# Manage opportunities in Dynamics 365 Sales
+# Lab 5 - Manage opportunities in Dynamics 365 Sales
 
 In Lab 02, you qualified Maya Torres's lead and Dynamics 365 automatically created an opportunity for Northwind Traders' commercial espresso machine lease. But qualifying a lead is just the beginning. A 12-location deal with a Director of Operations involves multiple people, a real decision-making process, competitors, and a negotiation.
 

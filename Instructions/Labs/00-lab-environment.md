@@ -1,13 +1,13 @@
 ---
 lab:
-    title: 'Set up your lab environment'
+    title: 'Lab 0 - Set up your lab environment'
     description: "Sign in to your Dynamics 365 Sales environment and meet the fictional company you'll work with throughout this course."
     duration: '15 minutes'
     level: 100
     islab: true
 ---
 
-# Set up your lab environment
+# Lab 0 - Set up your lab environment
 
 In this lab, you'll sign in to your Dynamics 365 Sales environment using the credentials provided by your authorized lab host, and you'll open the Sales Hub app where all the hands-on work takes place.
 
