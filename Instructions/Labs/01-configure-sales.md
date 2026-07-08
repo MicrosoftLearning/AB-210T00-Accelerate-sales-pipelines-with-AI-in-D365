@@ -21,7 +21,7 @@ You need to be signed in to your Dynamics 365 Sales environment and have the **S
 
 This lab also uses two admin portals. Open each in a separate browser tab before you begin:
 
-- **Microsoft 365 admin center** (`https://admin.microsoft.com`) — for creating users and assigning licenses
+- **Microsoft 365 admin center** (`https://admin.cloud.microsoft/`) — for creating users and assigning licenses
 - **Power Platform admin center** (`https://admin.powerplatform.microsoft.com`) — for environment settings and data management
 
 Sign in to both with the same credentials you used in Lab 00.
@@ -30,7 +30,7 @@ Sign in to both with the same credentials you used in Lab 00.
 
 Before configuring territories, you need user accounts for Contoso Coffee's regional sales managers and sales representative. You'll create five users in the Microsoft 365 admin center, assign them Dynamics 365 Sales licenses, and then assign them security roles in Dynamics 365 Sales.
 
-1. Open a new browser tab (if you haven't already) and go to `https://admin.microsoft.com`.
+1. Open a new browser tab (if you haven't already) and go to `https://admin.cloud.microsoft/`.
 
 1. In the left navigation, select **Users**, then select **Active users**.
 
@@ -46,34 +46,37 @@ Before configuring territories, you need user accounts for Contoso Coffee's regi
    - **Automatically create a password** — checked. The admin center generates a temporary password for the new user.
    - **Require this user to change their password when they first sign in** — checked. The user must set their own password on first sign-in.
 
-    > **Note**: In a production environment, you might uncheck automatic password creation to set a password yourself, or share the generated password securely with the new user.
+   > [!NOTE]
+   > In a production environment, you might uncheck automatic password creation to set a password yourself, or share the generated password securely with the new user.
 
-1. On the **Assign product licenses** page, select your country or region, then select **Dynamics 365 Sales** to assign a license.
+1. Select **Next**.
 
-1. Select **Next**, then **Next** again to skip optional settings, then select **Finish adding**, and then select **Close**.
+1. On the **Assign product licenses** page, under **Select location**, select your location, then select the **Dynamics 365 Sales Premium Viral Trial** checkbox to assign the license.
 
-1. Repeat steps 3–7 to create the following four users, assigning each the **Dynamics 365 Sales** license:
+1. Select **Next**, select **Next** again to skip optional settings, select **Finish adding**, and then select **Close**.
 
-   | First name | Last name | Username |
-   |------------|-----------|----------|
-   | Maria | Reyes | mariareyes |
-   | David | Osei | davidosei |
-   | Rachel | Sato | rachelsato |
-   | Jordan | Park | jordanpark |
+1. Repeat steps 3–8 to create the following four users, assigning each the **Dynamics 365 Sales** license:
+
+   | First name | Last name | Display name | Username|
+   |------------|-----------|-------------|-------------|
+   | Maria | Reyes | Maria Reyes | mariareyes |
+   | David | Osei | David Osei | davidosei |
+   | Rachel | Sato | Rachel Sato | rachelsato |
+   | Jordan | Park | Jordan Park | jordanpark |
 
 1. Confirm that all five users appear in the **Active users** list.
 
 ## Task 2: Assign security roles in Dynamics 365 Sales
 
-Next, assign security roles to define the privileges and access levels that these new users will receive. You'll do this in the **Power Platform admin center**, which is where administrators manage environment-level settings including user access. You'll use two out-of-the-box security roles: **Salesperson** for Jordan Park and **Sales Manager** for the four regional managers.
+Next, assign security roles to define the privileges and access levels that these new users receive. You'll do this in the **Power Platform admin center**, which is where administrators manage environment-level settings including user access. You'll use two out-of-the-box security roles: **Salesperson** for Jordan Park and **Sales Manager** for the four regional managers.
 
 1. Open a new browser tab and go to `https://admin.powerplatform.microsoft.com`.
 
 1. In the left navigation, select **Manage**, then select **Environments**.
 
-1. Select your Dynamics 365 **Sales Tiral** environment from the list.
+1. Select your Dynamics 365 **Sales Trial** environment from the list.
 
-1. Select **Settings** at the top of the environment details page.
+1. Select **Settings** on the command bar.
 
 1. Expand the **Users + permissions** section and select **Users**.
 
@@ -81,17 +84,18 @@ Next, assign security roles to define the privileges and access levels that thes
 
 1. In the search box, type `Andy Kim`, then select the user from the results.
 
-    > **Note**: Newly created users may take a few minutes to sync from Microsoft 365 to Dynamics 365. If you don't see a user yet, wait a moment and refresh the page.
+   > [!NOTE]
+   > Newly created users may take a few minutes to sync from Microsoft 365 to Dynamics 365. If you don't see a user yet, wait a moment and refresh the page.
 
-1. Select **Add.**
+1. Select **Add**.
 
 1. In the **Manage security roles** pane, select the **Sales Manager** security role.
 
-1. Select **Save** and **Save** again to confirm.
+1. Select **Save** and **Save** again to confirm the role assignment.
 
-1. Repeat steps 2–5 to add **Maria Reyes**, **David Osei**, and **Rachel Sato**, assigning each the **Sales Manager** role.
+1. Repeat steps 6–10 to add **Maria Reyes**, **David Osei**, and **Rachel Sato**, assigning each the **Sales Manager** role.
 
-1. Repeat steps 2–5 to add **Jordan Park**, assigning the **Salesperson** role.
+1. Repeat steps 6–10 to add **Jordan Park**, assigning the **Salesperson** role.
 
 You now have a realistic set of Contoso users ready to assign throughout the labs.
 
@@ -99,25 +103,25 @@ You now have a realistic set of Contoso users ready to assign throughout the lab
 
 Contoso's sales team is organized into four regions. You'll create a territory for each one in Dynamics 365 Sales.
 
-1. In Sales Hub, select **App Settings** from the bottom of the left navigation.
+1. Go to the **Sales Hub** and select **App Settings** from the bottom of the left navigation.
 
-1. In the **App Settings** area, scroll down to the **Sales Administration** section and select **Sales territories**.
+1. In the **App Settings** area, select **Show all settings** and expand the **Sales Administration** section, then select **Sales territories**.
 
-1. Select **+New** on the command bar to create the first territory.
+1. Select **+ New** on the command bar to create the first territory.
 
 1. In the **Territory Name** field, enter `Northeast`.
 
 1. In the **Manager** field, search for and select **Andy Kim**.
 
-1. Select **Save and close** on the command bar.
+1. Select **Save & close** on the command bar.
 
-1. Repeat steps 3–7 to create three more territories, assigning the manager shown:
+1. Repeat steps 3–6 to create three more territories, assigning the manager shown:
 
    | Territory | Manager |
    |-----------|---------|
-   | `Southeast` | Maria Reyes |
-   | `Central` | David Osei |
-   | `West` | Rachel Sato |
+   | Southeast | Maria Reyes |
+   | Central | David Osei |
+   | West | Rachel Sato |
 
 1. Confirm that all four territories appear in the list: **Northeast**, **Southeast**, **Central**, and **West**.
 
@@ -131,9 +135,9 @@ Contoso wants all records to have consistent, recognizable identifiers so that q
 
 1. In the left navigation, select **Manage** and then select **Environments**.
 
-1. Select your Dynamics 365 **Sales trial** environment from the list.
+1. Select your Dynamics 365 **Sales Trial** environment from the list.
 
-1. Select **Settings** at the top of the environment details page.
+1. Select **Settings** on the command bar.
 
 1. Expand the **Data management** section, then select **Auto-numbering**.
 
@@ -141,13 +145,14 @@ Contoso wants all records to have consistent, recognizable identifiers so that q
 
 1. Change the **Prefix** value to `CCQ` (Contoso Coffee Quote).
 
-1. Confirm the **Suffix length** is set to `6`. 
+1. Confirm the **Suffix length** is set to `6`.
 
 1. Find the **Orders** row and change the **Prefix** to `CCO` (Contoso Coffee Order).
 
 1. Select **Save** to apply the changes.
 
-    > **Note**: Auto-numbering changes apply to new records only. Existing records keep their original numbers.
+  > [!NOTE]
+  > Auto-numbering changes apply to new records only. Existing records keep their original numbers.
 
 <!--
 ## Task 5: Set up duplicate detection for leads
@@ -160,7 +165,7 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. In the environment settings, expand the **Data management** section and select **Duplicate detection rules**.
 
-1. Select **+New** on the command bar.
+1. Select **+ New** on the command bar.
 
 1. Fill in the rule details:
    - **Name**: `Duplicate leads by company name`
@@ -172,7 +177,8 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. From the **Field** dropdown, select **Company Name**.
 
-    > **Note**: You may notice an **Account** field on lead records as well. Account is a lookup that links to an existing Account record, but most inbound leads arrive before any Account exists, so that field is usually empty. **Company Name** is the plain-text field where the company name is captured at the point of entry, making it the right choice for catching duplicates from web forms, trade show scans, and CSV imports.
+    > [!NOTE]
+    > You may notice an **Account** field on lead records as well. Account is a lookup that links to an existing Account record, but most inbound leads arrive before any Account exists, so that field is usually empty. **Company Name** is the plain-text field where the company name is captured at the point of entry, making it the right choice for catching duplicates from web forms, trade show scans, and CSV imports.
 
 1. Set **Criteria** to **Same first characters**, and set the **Number of characters** to `5`.
 
@@ -180,7 +186,8 @@ In this task, you'll create a rule that flags two leads as potential duplicates 
 
 1. On the rules list, find your new rule and select **Publish** to activate it. Select **OK** to confirm.
 
-    > **Note**: Duplicate detection rules only run when a user saves a record or during data imports. They don't retroactively flag existing records.
+    > [!NOTE]
+    > Duplicate detection rules only run when a user saves a record or during data imports. They don't retroactively flag existing records.
 -->
 
 ## Task 6: Configure Copilot record summarization
@@ -195,9 +202,10 @@ One of the biggest time-savers in Dynamics 365 Sales is Copilot's ability to sum
 
 1. Select the **Setup** tab.
 
-1. Under **All apps**, confirm the toggle is set to **On**. If it's set to **Custom**, change it to **On**.
+1. Under **All apps**, confirm the dropdown list is set to **On**. If it's set to **Custom**, change it to **On**.
 
-    > **Note**: The default value may vary by environment. Setting it to **On** enables Copilot features across all apps in the environment.
+   > [!NOTE]
+   > The default value may vary by environment. Setting it to **On** enables Copilot features across all apps in the environment.
 
 1. Select **Save**.
 
@@ -224,7 +232,8 @@ One of the biggest time-savers in Dynamics 365 Sales is Copilot's ability to sum
 
 1. Select **Save**.
 
-    > **Note**: Changes to Copilot summarization take effect immediately for new sessions. Sellers who are already signed in may need to refresh their browser.
+  > [!NOTE]
+  > Changes to Copilot summarization take effect immediately for new sessions. Sellers who are already signed in may need to refresh their browser.
 
 ## Task 7: Verify your configuration
 
@@ -234,7 +243,7 @@ Before moving on, confirm that Copilot summarization is working as expected. You
 
 1. In the left navigation, select **Leads**.
 
-1. Select **+New** on the command bar.
+1. Select **+ New** on the command bar.
 
 1. Fill in the following details for the first test lead:
    - **Topic**: `Test Lead - Verify Config`

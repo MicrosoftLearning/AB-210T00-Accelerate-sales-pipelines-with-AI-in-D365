@@ -67,13 +67,13 @@ Use the credentials provided by your authorized lab host to sign up for a Dynami
 
 1. Find the **Sales** section, and select **Try for free**.
 
-1. Enter the **Username** provided by your lab host, and then select **Next**.
+1. Enter the **Username** provided by your lab host, select the checkbox to agree to the terms, and then select **Start your free trial**.
 
 1. Enter the **Password** provided by your lab host, and then select **Sign in**.
 
-1. On the confirmation page, verify your country or region and phone number, and then select **Get started**.
+1. If prompted to stay signed in, select **Yes**.
 
-1. If you're prompted to stay signed in, select **Yes**.
+1. On the confirmation page, verify your job title, country or region, and phone number, and then select **Submit**.
 
 1. Wait for the trial environment to finish setting up. This may take a few minutes.
 
@@ -85,10 +85,11 @@ Use the credentials provided by your authorized lab host to sign up for a Dynami
 
 1. In the app selector, select **Sales Hub**.
 
-1. Take a moment to explore the left navigation. You'll see sections for **Leads**, **Opportunities**, **Accounts**, **Contacts**, and more. The **App Settings** area (accessible from the bottom of the navigation or via the gear icon) is where you'll do most of the configuration work.
+1. Take a moment to explore the left navigation. You'll see sections for **Leads**, **Opportunities**, **Accounts**, **Contacts**, and more. The **App Settings** area (accessible from the bottom of the navigation) is where you'll do most of the configuration work.
 
 1. Confirm that you can see the **Sales Hub** title in the top-left corner of the screen. If you can, your environment is ready.
 
-    > **Note**: Your environment may look slightly different depending on the Dynamics 365 Sales version and any settings already configured by your lab host. This is normal.
+   > [!NOTE]
+   > Your environment may look slightly different depending on the Dynamics 365 Sales version and any settings already configured by your lab host. This is normal.
 
 You've successfully signed in and opened your Dynamics 365 Sales environment. You're ready to start building Contoso Coffee's sales system, beginning with Lab 01.
