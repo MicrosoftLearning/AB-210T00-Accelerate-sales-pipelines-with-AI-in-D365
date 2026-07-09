@@ -9,7 +9,8 @@ lab:
 
 # Lab 3 - Use the Sales Qualification Agent
 
-> **Note**: The Sales Qualification Agent requires a **Dynamics 365 Sales Premium** or **Microsoft 365 Copilot** license with Copilot Studio capacity. This feature may not be available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the feature isn't available in your environment, review the steps to understand the configuration process and move on to Lab 04.
+> [!NOTE]
+> The Sales Qualification Agent requires a **Dynamics 365 Sales Premium** or **Microsoft 365 Copilot** license with Copilot Studio capacity. This feature may not be available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the feature isn't available in your environment, review the steps to understand the configuration process and move on to Lab 04.
 
 Contoso Coffee's reps are spending an average of three hours researching each prospect before their first call — looking up restaurant group locations, hotel brand footprints, and office campus sizes on LinkedIn, checking recent news, and reading through industry reviews. That's time that could be spent selling. Priya needs a better answer than "do it faster."
 
@@ -29,14 +30,15 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
 
 1. Select **Create and manage agents**.
 
-1. Select **Create**. A **Prerequisites** page opens listing all required items. All of these should have a **green check mark** next to them by default - that means that the setting is enabled and you don't need to take any extra action. If you do not see a green check mark, select **Set up** to enable these features. (Ask your instructor if you need help.)
+1. A **Prerequisites** page opens listing all required items. All of these should have a **green check mark** next to them by default - that means that the setting is enabled and you don't need to take any extra action. If you do not see a green check mark, select **Set up** to enable these features. (Ask your instructor if you need help.)
    - **Microsoft Copilot Studio capacity**: Select **Set up** to open the Power Platform admin center and allocate Copilot Studio message capacity for your environment.
    - **Move data across regions**: Select **Accept terms** to open the Power Platform admin center and enable **Move data across regions** under **Generative AI features**.
    - **AI prompts**: Confirm that **AI prompts** is enabled in the same **Features** page.
 
-1. Once all prerequisites have a green check mark, the **Create** button on the AI agents page becomes available.
+1. Once all prerequisites have a green check mark, the **Create** button on the AI agents page becomes available. Select **Create**.
 
-    > **Note**: If any prerequisite can't be completed because the feature isn't available in your trial environment, this lab may not be fully supported. Review the remaining steps for learning purposes and proceed to Lab 04. 
+   > [!NOTE]
+   > If any prerequisite can't be completed because the feature isn't available in your trial environment, this lab may not be fully supported. Review the remaining steps for learning purposes and proceed to Lab 04.
 
 ## Task 2: Select the agent type and create the app registration
 
@@ -44,9 +46,10 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
 
 1. On the mode selection screen, **Research** is selected by default. Leave it selected.
 
-    > **Note**: Research-only mode means the agent researches leads and prepares a summary and draft email for the seller, but it doesn't send emails autonomously. **Engage** mode enables full autonomous outreach, but requires an additional shared mailbox configuration and is typically reserved for high-volume scenarios.
+   > [!NOTE]
+   > Research-only mode means the agent researches leads and prepares a summary and draft email for the seller, but it doesn't send emails autonomously. **Engage** mode enables full autonomous outreach, but requires an additional shared mailbox configuration and is typically reserved for high-volume scenarios.
 
-1. Scroll down to view the **Agent-specific prerequisites** section.
+1. Scroll down to view the Agent **Prerequisites** section.
 
 1. The **Bing search** tile should already show a green check mark — no action needed.
 
@@ -55,8 +58,8 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
     Azure opens directly to a new app registration form.
 
 1. Fill in the registration details:
-   - **Name**: `Contoso Coffee Sales Qualification Agent`
-   - **Supported account types**: **Single tenant only - Contoso**
+   - **Name**: Contoso Coffee Sales Qualification Agent
+   - **Supported account types**: Single tenant only - Contoso
 
 1. Select **Register**. Azure registers the app and may redirect you to the app overview page, or back to the App registrations list.
 
@@ -66,11 +69,11 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
 
 ## Task 3: Create the app user in Dataverse
 
-1. Return to the Sales Hub browser tab. On the **Create app in Azure** tile, select **Mark as done**.
+1. Return to the Sales Hub browser tab. On the **Create app in Azure** tile, select the **Mark as done** checkbox.
 
 1. On the **Create app user in Dataverse** tile, select **Set up**.
 
-    The Power Platform admin center opens to the Application users page.
+   The Power Platform admin center opens to the Application users page.
 
 1. Select **+ New app user**.
 
@@ -82,7 +85,7 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
 
 1. Under **Security roles**, select the pencil icon and assign the **AIsalesperson** role.
 
-1. Select **Save**, then select **Create**.
+1. Select **Save**, select **Save** again, then select **Create**.
 
 1. Return to the Sales Hub tab and select **Mark as done** on the **Create app user in Dataverse** tile.
 
@@ -94,17 +97,19 @@ You're now on the agent configuration page. Work through each section from top t
 
 ### Agent profile
 
+1. Select **Manual setup** to configure the agent manually.
+
 1. In the **Agent profile** section, fill in the following:
-   - **Agent name**: `Contoso Coffee Lead Research Agent`
-   - **What should this agent do**: `Research inbound trade show leads, evaluate them against Contoso Coffee's target customer profile, and prepare research summaries and draft outreach emails for sellers.`
+   - **Agent name**: Contoso Coffee Lead Research Agent
+   - **What should this agent do**: Research inbound trade show leads, evaluate them against Contoso Coffee's target customer profile, and prepare research summaries and draft outreach emails for sellers.
    - **Agent user**: Select the **Contoso Coffee Sales Qualification Agent** app user you created in Task 3. (If it doesn't show up as an option, try refreshing your browser.)
-   - **Agent language**: **English**
+   - **Agent language**: English
 
 ### Company info
 
 1. In the **Company info** section, fill in the following:
-   - **Company name**: `Contoso Coffee`
-   - **Company website**: `www.contoso.com`
+   - **Company name**: Contoso Coffee
+   - **Company website**: www.contoso.com
 
 ### Products
 
@@ -112,31 +117,32 @@ You're now on the agent configuration page. Work through each section from top t
 
     `Contoso Coffee sells commercial espresso machines and coffee makers to businesses across the food service and hospitality industries, including restaurants, hotels, corporate offices, and convention centers. We serve organizations with 50 to 5,000 employees across North America. Our key offerings include commercial espresso machines, commercial batch brew coffee makers, 12- to 36-month equipment leases, and service and maintenance contracts.`
 
-    > **Note**: The Products description is used to auto-generate handoff criteria later. Be as specific as possible about your target customers and the problems you solve.
+   > [!NOTE]
+   > The Products description is used to auto-generate handoff criteria later. Be as specific as possible about your target customers and the problems you solve.
 
 ### Selection criteria
 
 1. In the **Selection criteria** section, enter a name and description:
-   - **Name**: `FoodService Summit trade show leads`
-   - **Description**: `Hot and warm leads captured at food service and hospitality trade shows, ready for AI-assisted research before seller handoff.`
+   - **Name**: FoodService Summit trade show leads
+   - **Description**: Hot and warm leads captured at food service and hospitality trade shows, ready for AI-assisted research before seller handoff.
 
-1. In the **Segment conditions** section, remove the default conditions.
+1. In the **Segment conditions** section, remove the default conditions by selecting the ellipsis **(...)** and then selecting **Delete**.
 
-1. Then add the following conditions by selecting **+Add**:
-   - **Lead Source** | **Equals** | **Trade Show**
-   - **Rating** | **Equals** | **Hot**, **Warm**
+1. Then add the following conditions by selecting **+ Add** > **Add row**:
+   - Lead Source | Equals | Trade Show
+   - Rating | Equals | Hot, Warm
 
     This tells the agent to process trade show leads rated Hot or Warm. Cold leads are excluded.
 
 ### Email instructions
 
-1. In the **Email instructions** section, under **Outreach emails**, leave the default option **AI-personalization** selected.
+1. In the **Email instructions** section, under **Outreach emails**, leave the default option **AI-generated personalization** selected.
 
     This allows the agent to generate personalized email content for each lead using generative AI based on the research it produces.
 
 ### Email address validation
 
-1. In the **Email address validation** section, confirm the default field **Email** (`emailaddress1`) is selected.
+1. In the **Email address validation** section, confirm the default field **Email (emailaddress1)** is selected.
 
     This is the standard email field on the Lead table and matches the field used in the leads you imported. No change is needed.
 
@@ -151,13 +157,14 @@ You're now on the agent configuration page. Work through each section from top t
 1. In the **Assignment rules** section, configure how the agent assigns researched leads to sellers:
    - Make sure **Specific seller** is selected.
    - Set the seller to **Jordan Park**.
-   - Under **Supervisor**, select your administrator account.
+   - Under **Add supervisor**, select your administrator account.
 
 ### Research (knowledge sources)
 
 1. In the **Research** section, review the default knowledge source configuration.
 
-    > **Note**: In a production environment, you'd add public URLs for your product pages, solution briefs, and competitive comparisons — and SharePoint documents such as pricing guides and objection-handling briefs. For this lab, skip adding sources and proceed.
+   > [!NOTE]
+   > In a production environment, you'd add public URLs for your product pages, solution briefs, and competitive comparisons — and SharePoint documents such as pricing guides and objection-handling briefs. For this lab, skip adding sources and proceed.
 
 ### Agent emails
 
@@ -169,47 +176,49 @@ You're now on the agent configuration page. Work through each section from top t
 
 ### Start agent
 
-1. Scroll to the top of the agent configuration page.
+1. Select **Start agent** in the upper-right corner, and then select **Start agent** again to confirm.
 
-1. Select **Start agent** and **Start agent** again to confirm.
+1. Select **Go to agent list**.
 
-    > [!NOTE]
-    > Starting the agent may take several minutes. Wait for the status to change from **Saving** to **On** before proceeding.
+   > [!NOTE]
+   > Starting the agent may take several minutes. Wait for the status to change from **Saving** to **On** before proceeding.
 
 ## Task 5: View a lead being worked on by the agent
 
-1. In the bottom-left corner of the screen, select the area selector that currently shows **App settings** and switch it to **Sales**. Then select **Leads** from the left navigation.
+1. In the bottom-left corner of the screen, select the area selector that currently shows **App Settings** and switch it to **Sales**. Then select **Leads** from the left navigation.
 
 1. Select **+ New** on the command bar to create a new lead for the agent to process.
 
 1. Fill in the following fields:
-   - **Topic**: `Espresso machine inquiry`
-   - **First name**: `Alex`
-   - **Last name**: `Rivera`
-   - **Job Title**: `General Manager`
-   - **Company**: `Northgate Hospitality Group`
-   - **Email**: `alex@northgatehospitality.com`
+   - **Topic**: Espresso machine inquiry
+   - **First name**: Alex
+   - **Last name**: Rivera
+   - **Job Title**: General Manager
+   - **Company**: Northgate Hospitality Group
+   - **Email**: alex@northgatehospitality.com
 
 1. In the header, fill in the following fields:
-   - **Lead Source**: **Trade Show**
-   - **Rating**: **Hot**
+   - **Lead Source**: Trade Show
+   - **Rating**: Hot
 
 1. Select **Save**. The agent monitors for new leads matching your selection criteria (Trade Show + Hot or Warm) and will begin researching this lead automatically.
 
-    > [!NOTE]
-    > The agent processes new leads asynchronously. It may take several minutes before research results appear on the record. If you don't see a **Research** section yet, wait a few minutes and then refresh the page.
+   > [!NOTE]
+   > The agent processes new leads asynchronously. It may take several minutes before research results appear on the record. While the agent works, the lead's **Owner** changes to the **Contoso Coffee Sales Qualification Agent**, and the research findings appear in the **Leads handed over by AI agent** view. If you don't see them yet, wait a few minutes and then refresh the page.
 
-1. Return to the **Leads** view and select the dropdown next to the view name. 
+1. Return to the **My Open Leads** view and select the dropdown next to the view name.
 
-1. Select the **Leads being processed by AI Agent** view.
+1. Select the **Leads handed over by AI Agent** view.
 
-1. You should see the lead you just created in the view, with a message that the agent will have insights for you shortly. 
+1. Confirm that the lead you just created appears in the view, which indicates the agent has picked it up for processing.
 
-1. Select the lead again, and wait for insights to appear in the **Summary** section.
+1. Select the lead to open the **Lead Research** page. Review the agent's findings, including the **Suggested action** (with a draft outreach email), **Key insights** (why the lead is rated hot, warm, or cold), and **Deeper insights** (company overview, finances, News, and Competitor Insights).
 
 ## Task 6: See agent insights
 
-1. Navigate to **App Settings** > **Dynamics 365 AI Hub** > **AI optimization hub**.
+1. In the bottom-left corner, select the area selector and switch it to **App Settings**. Under **General settings**, select **Dynamics 365 AI hub**.
+
+1. On the **AI optimization hub** tile, select **See insights**.
 
 1. The insights for the **Sales Qualification Agent** will appear.
 
@@ -219,8 +228,9 @@ You're now on the agent configuration page. Work through each section from top t
    - **AI agent lead handoff rate** — the percentage of evaluated leads handed off to sellers
    - **Total leads disqualified** — leads the agent determined didn't match the target profile
 
-    > **Note**: Because your environment is new, the dashboard may show minimal data. This is expected. In a live environment, these metrics would populate within a few hours of activation.
+   > [!NOTE]
+   > Because your environment is new, the dashboard may show minimal data. This is expected. In a live environment, these metrics would populate within a few hours of activation.
 
-1. Select **Leads disqualified by AI agent** from the view selector on the Leads list to see any leads the agent has determined don't match Contoso Coffee's target customer profile.
+1. In the upper-right corner of the dashboard, select the **View leads category** dropdown and choose **Leads disqualified by AI agent** to see any leads the agent has determined don't match Contoso Coffee's target customer profile.
 
 You've successfully configured the Sales Qualification Agent. Contoso Coffee's reps will no longer spend three hours researching each lead manually — the agent does that automatically and delivers a research brief, a lead rating, and a draft email directly to the seller.
