@@ -24,7 +24,7 @@ This lab should take approximately **40** minutes to complete.
 
 The agent prerequisites are checked from within Sales Hub itself — the wizard walks you through each one when you first open the agent creation page.
 
-1. In Sales Hub, select **App Settings** from the bottom of the left navigation.
+1. In **Sales Hub**, select **App Settings** from the bottom of the left navigation.
 
 1. Under **General settings**, select **Dynamics 365 AI hub**.
 

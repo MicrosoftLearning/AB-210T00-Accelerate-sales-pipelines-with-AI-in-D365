@@ -23,7 +23,7 @@ You need to be signed in to Sales Hub. If you haven't completed Lab 01, make sur
 
 After a rep named **Jordan Park** left the conference floor, they typed a quick note about a conversation they had with a prospect named Maya Torres from Northwind Traders. You'll capture that as a lead.
 
-1. In Sales Hub, select **Leads** in the left navigation.
+1. In **Sales Hub**, select **Leads** in the left navigation.
 
 1. Select **+ New** on the command bar.
 
