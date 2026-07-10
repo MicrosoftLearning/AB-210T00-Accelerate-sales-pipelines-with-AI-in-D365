@@ -9,7 +9,8 @@ lab:
 
 # Lab 6 - Close deals using AI agents
 
-> **Note**: The Sales Opportunity Agent and Sales Close Agent are **preview features** that require a Dynamics 365 Sales Premium license. The Sales Close Agent additionally requires Microsoft Entra Application Developer permissions and Exchange Administrator access to complete the prerequisite setup. These features may not be fully available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the required features aren't available in your environment, review the steps to understand the configuration process and proceed to Lab 07.
+> [!NOTE]
+> The Sales Opportunity Agent and Sales Close Agent are **preview features** that require a Dynamics 365 Sales Premium license. The Sales Close Agent additionally requires Microsoft Entra Application Developer permissions and Exchange Administrator access to complete the prerequisite setup. These features may not be fully available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the required features aren't available in your environment, review the steps to understand the configuration process and proceed to Lab 07.
 
 Last quarter, three of Contoso Coffee's biggest deals stalled in the Proposal stage and were eventually lost. None of the reps were managing a bad pipeline — they were just overloaded. An equipment deal with multiple stakeholders can go quiet for two weeks, and by the time a rep notices, the prospect has moved on.
 
@@ -24,7 +25,7 @@ This lab should take approximately **45** minutes to complete.
 
 ## Task 1: Access the Dynamics 365 AI Hub
 
-1. In Sales Hub, select the **Change area** at the bottom of the left navigation and select **App Settings**.
+1. In Sales Hub, under **Change area** at the bottom of the left navigation, select **App Settings**.
 
 1. Go to **General settings** > **Dynamics 365 AI hub**.
 
@@ -42,7 +43,8 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. Select **Create**. In the **Create an AI agent** dialog, under **Sales Opportunity Agent**, select **Choose**.
 
-    > **Tip**: The agent settings also offer a **Setup assistant**, an AI-guided chat that walks you through configuration interactively. For this lab, you'll use the manual settings pages to understand each option individually.
+   > [!TIP]
+   > The agent settings also offer a **Setup assistant**, an AI-guided chat that walks you through configuration interactively. For this lab, you'll use the manual settings pages to understand each option individually.
 
 ### Configure prerequisites
 
@@ -53,37 +55,38 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
      - **Turn on search indexing to support Dataverse intelligence (Work IQ) in AI and agent experiences.**
      - **Show global search bar in all model driven apps and turn on search indexing to support search-only experiences.**
 
-     After enabling these settings, select **Save.** Return to the agent configuration page and select **Refresh** to update the status of this prerequisite.
-   - **Microsoft 365 Services** (optional but recommended): Allows the agent to read seller emails for engagement signals. If it isn't already checked, select **Mark as done** and **Apply changes** to enable.
+     After enabling these settings, select **Save**. Return to the agent configuration page and select **Refresh** to update the status of this prerequisite.
+   - **Microsoft 365 Services** (optional but recommended): Allows the agent to read seller emails for engagement signals. If the **Mark as done** checkbox is available, select it to enable this feature. If the checkbox is greyed out or unavailable, skip this step and continue.
 
-1. Select **Continue.**
+1. Select **Continue**.
 
 ### Configure the agent profile
 
 1. In the **General** settings section, select **Agent profile**. (It should open here by default.)
 
-1. Fill in:
-   - **Agent name**: `Contoso Coffee Pipeline Watch`
-   - **Agent language**: `English`
+1. Fill in the following fields:
+   - **Agent name**: Contoso Coffee Pipeline Watch
+   - **Agent language**: English
 
 ### Configure company information
 
 1. In the **General** settings section, select **Company info**.
 
 1. Fill in:
-   - **Company name**: `Contoso Coffee`
-   - **Company website**: `https://www.contoso.com`
-   - **Value proposition**: `Commercial espresso machines and coffee equipment on flexible annual lease terms, with dedicated account management and same-day service response for multi-location hospitality and restaurant clients.`
+   - **Company name**: Contoso Coffee
+   - **Company website**: https://www.contoso.com
+   - **Value proposition**: Commercial espresso machines and coffee equipment on flexible annual lease terms, with dedicated account management and same-day service response for multi-location hospitality and restaurant clients.
 
-    > **Note**: The value proposition tells the agent what to look for when researching accounts. A specific, product-focused description produces more relevant insights than a generic one.
+   > [!NOTE]
+   > The value proposition tells the agent what to look for when researching accounts. A specific, product-focused description produces more relevant insights than a generic one.
 
 ### Configure selection criteria
 
 1. In the **Guidance** section, select **Selection criteria**.
 
 1. Fill in:
-   - **Segment name**: `Contoso Coffee Open Opportunities`
-   - **Description**: `Open opportunities for commercial equipment leases over $10,000`
+   - **Segment name**: Contoso Coffee Open Opportunities
+   - **Description**: Open opportunities for commercial equipment leases over $10,000
 
 1. Under **Filter conditions**, add the following:
    - **Status** equals **Open**
@@ -93,57 +96,56 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 ### Configure refresh frequency
 
-1. In the **Guidance** section, select **Refresh frequency**. Review the default setting — this controls how often the agent updates its research for each opportunity.
+1. In the **Advanced** section, select **Refresh frequency**. Review the default settings — this controls how often the agent updates its research for each opportunity.
 
 ### Configure opportunity assessment
 
-1. In the **Guidance** section, select **Opportunity assessment**.
+1. In the **Advanced** section, select **Opportunity assessment**.
 
 1. Confirm the following fields are set to the correct columns from your opportunity records:
-   - **Monetary value**: `Est. Revenue`
-   - **Estimated close date**: `Est. Close Date`
+   - **Monetary value**: Est. revenue
+   - **Estimated close date**: Est. close date
 
-    These are the fields the agent uses to calculate risk and importance scores. The defaults match the standard Dynamics 365 Sales opportunity fields — leave them as is unless your organization uses custom fields for these values.
+    These are the fields the agent uses to determine risk and importance for each opportunity. The defaults match the standard Dynamics 365 Sales opportunity fields — leave them as is unless your organization uses custom fields for these values.
 
 ### Configure knowledge sources
 
-1. In the **Knowledge** section, select **Research**.
+1. In the **Advanced** section, select **Research**.
 
-1. Review the **Company research** section. By default, the agent uses public web data (Bing search, company websites) to research accounts. No changes are needed for this section.
+1. Review the **Company research (Account overview, finances and news)** section. By default, the agent uses public web data (Bing search, company websites) to research accounts. No changes are needed for this section.
 
-1. Scroll to the **Competitor research** section. Under **Key competitors**, select **+ Competitor** and add:
-   - `Fourth Coffee`
+1. Expand the **Competitor research** section. Under **Key competitors**, select **+ Competitor** and add:
+   - Fourth Coffee
 
-    > **Note**: This is the competitor you added to the Northwind Traders opportunity in Lab 05. The agent will use this list when no competitor is recorded on an opportunity record.
+   > [!NOTE]
+   > This is the competitor you added to the Northwind Traders opportunity in Lab 05. The agent will use this list when no competitor is recorded on an opportunity record.
 
 ### Configure risk and importance criteria
 
 1. In the **Advanced** section, select **Risk criteria**.
 
-1. Review the list of risk criteria — all are enabled by default. Each criterion has a configurable threshold. For Contoso Coffee, review the following and adjust if needed:
+1. Review the list of risk criteria by expanding the **Default risk criteria** section — all are enabled by default. Each criterion has a configurable threshold. For Contoso Coffee, review the following and adjust if needed:
 
    | Criterion | Default action |
    | --- | --- |
    | **No recent engagement** | Keep enabled. Equipment lease deals often go quiet — this surfaces deals with no contact for the default window. |
    | **Stalled in stage** | Keep enabled. Consider reducing the threshold (for example, 14 days) to catch deals that stall in the Propose stage. |
-   | **Missing BANT info** | Keep enabled. Flags deals missing Budget, Authority, Need, or Timeline information. |
+   | **Missing BANT info** | Keep enabled. Flags deals missing Budget, Authority, Need, and Timeline information. |
 
 1. Select **Importance criteria**. Review the six criteria and confirm that the following are enabled:
 
    | Criterion | Why it matters for Contoso Coffee |
    | --- | --- |
    | **Existing customer** | Multi-location clients with existing leases are higher-value renewal targets. |
-   | **Deal size** | Flags unusually large equipment orders compared to the account's past deals. |
+   | **Large deal size** | Flags unusually large equipment orders compared to the account's past deals. |
 
     Leave all other criteria at their defaults.
 
 ### Save and start the agent
 
 1. Before saving, review the left navigation panel and confirm that each section shows a green checkmark:
-   - **General**: Agent profile, Company info
-   - **Guidance**: Selection criteria, Refresh frequency, Opportunity assessment
-   - **Knowledge**: Research
-   - **Advanced**: Risk criteria, Importance criteria
+   - **General**: Agent profile, Company info, Selection criteria 
+   - **Advanced**: Refresh frequency, Opportunity assessment, Research, Risk criteria, Importance criteria, Connected skills
 
     If any section is missing a checkmark, select it and complete the required fields before continuing.
 
@@ -151,9 +153,9 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. Select **Start agent** to activate the Sales Opportunity Agent. Confirm by selecting **Start agent** again. 
 
-    The agent is now active. Reps will see an **Opportunity research** section on their opportunity records, populated with account news, stakeholder research, and engagement risk signals.
+   The agent is now active. Reps will see an **Opportunity research** section on their opportunity records, populated with account news, stakeholder research, and engagement risk signals.
 
-1. It may take awhile to start your agent; in the meantime, you can select **Go to agent list** and continue to Task 3.
+1. It may take a while for your agent to start. In the meantime, select **Go to agent list** and continue to Task 3.
 
 ## Task 3: Set up prerequisites for the Sales Close Agent
 
@@ -279,7 +281,8 @@ With all prerequisites complete, configure the agent's behavior.
 
      Select **Update** to save the changes.
 
-     > **Note**: These URLs use http://contoso.com, which redirects safely to microsoft.com in a trial environment — they serve as placeholder product page links for the agent to include in outreach emails.
+    > [!NOTE]
+    > These URLs use http://contoso.com, which redirects safely to microsoft.com in a trial environment — they serve as placeholder product page links for the agent to include in outreach emails.
 
    - **Value proposition of your product**: Enter a value proposition that explains why a customer should choose Contoso Coffee's equipment.
 
@@ -341,7 +344,8 @@ With all prerequisites complete, configure the agent's behavior.
 
 1. Select **Publish** in Copilot Studio to apply the changes.
 
-    > **Note**: You must publish in Copilot Studio for the knowledge source to take effect. The agent cannot start until at least one product documentation source is published.
+   > [!NOTE]
+   > You must publish in Copilot Studio for the knowledge source to take effect. The agent cannot start until at least one product documentation source is published.
 
 1. Return to the Sales Close Agent **Knowledge sources** tab in Sales Hub and select **Save**.
 
@@ -361,7 +365,8 @@ With all prerequisites complete, configure the agent's behavior.
 
 1. Review the **Activity log** to see all agent actions — emails sent, customer replies received, escalations triggered, and opt-outs recorded.
 
-    > **Note**: In a trial environment, the agents may not have run yet. The Opportunity research section and activity log populate as agents process records on their scheduled refresh cycle. Priya can use the activity log to answer compliance questions: which customers were contacted, what was sent, and whether anyone opted out.
+   > [!NOTE]
+   > In a trial environment, the agents may not have run yet. The Opportunity research section and activity log populate as agents process records on their scheduled refresh cycle. Priya can use the activity log to answer compliance questions: which customers were contacted, what was sent, and whether anyone opted out.
 
 You've configured two AI agents that address Contoso Coffee's pipeline risk problem. The Sales Opportunity Agent ensures no deal goes unresearched. The Sales Close Agent ensures no follow-up falls through the cracks — without adding to the rep's workload.
 
