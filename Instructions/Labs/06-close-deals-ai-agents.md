@@ -163,7 +163,7 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 ### Open the Sales Close Agent settings
 
-1. Return to **App Settings** > **Dynamics 365 AI hub** > **Create and manage agent**.
+1. In **App Settings**, select **Dynamics 365 AI hub**, then select**Create and manage agents**.
 
 1. Select **Create**. Under **Sales Close Agent**, select **Choose**.
 
@@ -173,11 +173,11 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. In the **Create app in Azure** section, select **Set up**.
 
-    This opens the app registration page in Microsoft Entra ID.
+   This opens the app registration page in Microsoft Entra ID.
 
 1. Select **+ New registration** and fill in:
-   - **Name**: `Contoso Coffee Sales Close Agent`
-   - **Supported account types**: **Single tenant only - Contoso**
+   - **Name**: Contoso Coffee Sales Close Agent
+   - **Supported account types**: Single tenant only - Contoso
 
 1. Select **Register**. Azure registers the app and may redirect you to the app overview page, or back to the App registrations list.
 
@@ -191,13 +191,13 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. In the **Create shared mailbox** section, select **Set up**.
 
-    This opens the Exchange admin center.
+   This opens the Exchange admin center.
 
-1. Go to **Recipients** > **Mailboxes** and select **Add a shared mailbox**.
+1. Go to **Recipients** > **Mailboxes** and select **+ Add a shared mailbox**.
 
-1. Fill in:
-   - **Display name**: `Contoso Coffee Sales Agent`
-   - **Email address**: `sales-agent@[your-domain]`
+1. Fill in the following fields:
+   - **Display name**: Contoso Coffee Sales Agent
+   - **Email address**: sales-agent@[your-domain]
 
 1. Select **Create**.
 
@@ -207,12 +207,12 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. In the **Create an app user in Dataverse** section, select **Set up**.
 
-    This opens the Power Platform admin center.
+   This opens the Power Platform admin center.
 
 1. Select your environment, then go to **Settings** > **Users + permissions** > **Application users**.
 
-1. Select **+ New app user**. In the pane:
-   - Select **+ Add an app** and enter the **Application (client) ID** you copied from Azure. (If you see the app in the list, you can simply select it there.)
+1. Select **+ New app user**. In the **Create a new app user**pane:
+   - Select **+ Add an app** and enter the **Application (client) ID** you copied from Azure. (If you see the app in the list, you can simply select it there.) Select **Add**.
    - Set the business unit to the root business unit.
    - Select the pencil icon to add a security role. Set the security role to **AISalesPerson** and select **Save**, then **Save** again to confirm.
 
@@ -224,13 +224,13 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. In the **Configure server side sync** section, select **Set up**.
 
-    This opens the **Mailboxes** view in Dynamics 365 Advanced Settings.
+   This opens the **My Active Mailboxes** view in Dynamics 365 Advanced Settings.
 
 1. Change the view to **All Mailboxes** and open the mailbox for the app user you just created (**Contoso Coffee Sales Close Agent**).
 
 1. Replace the email address with the shared mailbox address.
 
-1. Select **Save,** then select **Approve Email**. Select **OK** to confirm.
+1. Select **Save**, then select **Approve Email**. Select **OK** to confirm.
 
 1. Select **Test & Enable Mailbox** and select **OK** to start the test.
 
@@ -238,7 +238,7 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. Return to the **Prerequisites** page and select **Mark as done** for **Configure server side sync**.
 
-1. Select **Continue.**
+1. Select **Continue**.
 
 ## Task 4: Configure and start the Sales Close Agent
 
