@@ -211,12 +211,13 @@ One of the biggest time-savers in Dynamics 365 Sales is Copilot's ability to sum
 
 1. Select the **Leads** tab.
 
-1. Review the default fields included in the lead summary. You should see fields like **Topic**, **Lead Source**, and **Rating**.
+1. Review the default fields included in the lead summary. You should see fields like **Topic** and **Lead Source**.
 
 1. Select **+ Add fields** and add the following fields to the summary:
    - **Company Name**
    - **Annual Revenue**
    - **No. of Employees**
+   - **Rating**
 
     These fields help a rep quickly assess the size and potential of a lead without opening every tab.
 
