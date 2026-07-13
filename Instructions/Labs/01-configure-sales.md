@@ -143,11 +143,11 @@ Contoso wants all records to have consistent, recognizable identifiers so that q
 
 1. In the auto-numbering settings, find the **Quotes** row.
 
-1. Change the **Prefix** value to `CCQ` (Contoso Coffee Quote).
+1. Change the **Prefix** value to **CCQ** (Contoso Coffee Quote).
 
-1. Confirm the **Suffix length** is set to `6`.
+1. Confirm the **Suffix length** is set to **6**.
 
-1. Find the **Orders** row and change the **Prefix** to `CCO` (Contoso Coffee Order).
+1. Find the **Orders** row and change the **Prefix** to **CCO** (Contoso Coffee Order).
 
 1. Select **Save** to apply the changes.
 
@@ -246,16 +246,16 @@ Before moving on, confirm that Copilot summarization is working as expected. You
 1. Select **+ New** on the command bar.
 
 1. Fill in the following details for the first test lead:
-   - **Topic**: `Test Lead - Verify Config`
-   - **First Name**: `Alex`
-   - **Last Name**: `Rivera`
-   - **Company**: `Northwind Trading`
+   - **Topic**: Test Lead - Verify Config
+   - **First Name**: Alex
+   - **Last Name**: Rivera
+   - **Company**: Northwind Trading
 
 1. Select the **Details** tab on the lead record.
 
 1. Enter the following values:
-   - **Annual Revenue**: `500000`
-   - **No. of Employees**: `50`
+   - **Annual Revenue**: 500000
+   - **No. of Employees**: 50
 
 1. Select **Save** on the command bar.
 

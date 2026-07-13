@@ -71,7 +71,7 @@ Jordan collected 47 cards at the conference, but you'll work with a small repres
     Ben,Andrews,Facilities Director,Tailspin Toys,ben@tailspintoys.com,+1 (303) 555-0133,Trade Show,Hot,Durable Manufacturing,680,Corporate campus espresso machine lease - 3 locations
     ```
 
-1. Save the file as `foodservice-summit-leads.csv` in a location you can easily find (such as your Desktop). In the **Save As** dialog, set **Save as type** to **All Files** — otherwise Notepad adds a `.txt` extension and the import will fail.
+1. Save the file as **foodservice-summit-leads.csv** in a location you can easily find (such as your Desktop). In the **Save As** dialog, set **Save as type** to **All Files** — otherwise Notepad adds a **.txt** extension and the import will fail.
 
 ### Import the file
 
@@ -81,7 +81,7 @@ Jordan collected 47 cards at the conference, but you'll work with a small repres
 
 1. Select **+ Import data** on the command bar.
 
-1. In the import wizard, select **Choose file** and browse to the `foodservice-summit-leads.csv` file you saved. Select **Next**.
+1. In the import wizard, select **Choose file** and browse to the **foodservice-summit-leads.csv** file you saved. Select **Next**.
 
 1. On the **Review file upload summary** page, confirm the defaults are set as follows, then select **Next**:
    - **Data delimiter**: Quotation mark (")
@@ -118,7 +118,7 @@ Jordan collected 47 cards at the conference, but you'll work with a small repres
 
 1. On the command bar, select **Read-only grid** to switch to the grid view.
 
-1. Search for one of the names from your CSV file (such as `Ben Andrews`) to confirm the imported leads appear in the list.
+1. Search for one of the names from your CSV file (such as **Ben Andrews**) to confirm the imported leads appear in the list.
 
   > [!NOTE]
   > If the leads don't appear immediately, wait another 30 seconds and refresh again.
@@ -136,7 +136,7 @@ Now that the leads are in the system, you'll use Copilot to review one of the ho
 1. In the Quick Create form:
    - **Subject**: Discovery call - equipment consultation
    - **Direction**: Outgoing
-   - **Description**: Follow up from FoodService Summit Denver. Confirm equipment needs and site count.
+   - **Description**: Follow up from **FoodService Summit Denver**. Confirm equipment needs and site count.
    - **Duration**: 30 minutes
 
 1. Select **Save and close**.
