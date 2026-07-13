@@ -25,99 +25,99 @@ You need to be signed in to Sales Hub with the **App Settings** area accessible.
 
 Dynamics 365 Sales uses unit groups to define how products are measured and sold. Contoso Coffee sells equipment as outright purchases and as monthly leases, and service contracts as flat-rate annual agreements. You'll create a unit group for equipment first.
 
-1. In Sales Hub, select **App Settings** from the bottom of the left navigation.
+1. In **Sales Hub**, select **App Settings** from the bottom of the left navigation.
 
-1. Under the **Product catalog** section, select **Unit groups**.
+1. Under the **Product Catalog** section, select **Unit groups**.
 
-1. Select **New** on the command bar.
+1. Select **+ New** on the command bar.
 
 1. Fill in the unit group details:
-   - **Name**: `Equipment Units`
-   - **Primary unit**: `Unit`
+   - **Name**: Equipment Units
+   - **Primary Unit**: Unit
 
-1. Select **OK** or **Save**.
+1. Select **OK**.
 
-1. On the **Equipment Units** record, select **Related** and then select **Units.**
+1. On the **Equipment Units** record, select **Related** and then select **Units**.
 
-1. Select **New Unit.**
+1. Select **+ New Unit**.
 
 1. Add the following unit:
-   - **Name**: `Month (lease)`
-   - **Quantity**: `1`
-   - **Base unit**: Unit
+   - **Name**: Month (lease)
+   - **Quantity**: 1
+   - **Base Unit**: Unit
 
-1. Select **Save and close.**
+1. Select **Save and Close**.
 
-1. Add another unit:
-   - **Name**: `Year (lease)`
-   - **Quantity**: `12`
-   - **Base unit**: Month (Lease)
+1. Add another unit with the following details:
+   - **Name**: Year (lease)
+   - **Quantity**: 12
+   - **Base Unit**: Month (lease)
 
-1. Select **Save and close**.
+1. Select **Save and Close**.
 
-1. Return to the **Unit groups** list and select **New** again to create a second unit group for service contracts.
+1. Return to the **Active Unit Groups** view and select **+ New** again to create a second unit group for service contracts.
 
-1. Fill in:
-    - **Name**: `Service Units`
-    - **Primary unit**: `Visit`
+1. Fill in the following details:
+    - **Name**: Service Units
+    - **Primary Unit**: Visit
 
-1. Select **OK** or **Save**.
+1. Select **OK**.
 
-1. On the **Service Units** record, select **Related** and **Units.** Add the following units:
-    - **Name**: `Month (flat rate)` — Quantity: `1`, Base Unit: Visit
-    - **Name**: `Year (flat rate)` — Quantity: `12`, Base Unit: Month (flat rate)
+1. On the **Service Units** record, select **Related**, then select **Units**. Add the following units and select **Save and Close** after each one:
+    - **Name**: Month (flat rate) — **Quantity**: 1, **Base Unit**: Visit
+    - **Name**: Year (flat rate) — **Quantity**: 12, **Base Unit**: Month (flat rate)
 
-1. Select **Save and close**.
+1. Select **Save & Close**.
 
 ## Task 2: Create products
 
 Now you'll add Contoso Coffee's four core offerings to the product catalog.
 
-1. In **App Settings** > **Product catalog**, select **Families and products**.
+1. In **App Settings**, under **Product Catalog**, select **Families and products**.
 
 1. Select **Add Product** on the command bar.
 
 1. Fill in the first product:
-   - **Name**: `Espresso Machine - Standard`
-   - **Product ID**: `ESP-STD`
-   - **Valid from**: Today's date
-   - **Description**: `Commercial single-group espresso machine suitable for cafés, small restaurants, and hotel lobby bars serving up to 80 drinks per day.`
-   - **Unit group**: `Equipment Units`
-   - **Default unit**: `Unit`
-   - **Decimals supported**: `0`
+   - **Name**: Espresso Machine - Standard
+   - **Product ID**: ESP-STD
+   - **Valid From**: Today's date
+   - **Description**: Commercial single-group espresso machine suitable for cafés, small restaurants, and hotel lobby bars serving up to 80 drinks per day.
+   - **Unit Group**: Equipment Units
+   - **Default Unit**: Unit
+   - **Decimals Supported**: 0
 
 1. Select **Save**.
 
 1. Confirm the **Status** shows **Active**. Products are saved as active immediately in this environment.
 
-1. Select the back button to return to the Products, Families, and Bundles view. Repeat steps 2–5 to create three more products:
+1. Select the back button to return to the **All Products, Families, & Bundles** view. Repeat steps 2–5 to create three more products:
 
     **Product 2:**
-    - **Name**: `Espresso Machine - Pro`
-    - **Product ID**: `ESP-PRO`
-    - **Valid from**: Today's date
-    - **Description**: `Commercial dual-group espresso machine for high-volume environments such as hotel restaurants, corporate cafeterias, and conference centers serving up to 300 drinks per day.`
-    - **Unit group**: `Equipment Units`
-    - **Default unit**: `Unit`
-    - **Decimals supported**: `0`
+    - **Name**: Espresso Machine - Pro
+    - **Product ID**: ESP-PRO
+    - **Valid From**: Today's date
+    - **Description**: Commercial dual-group espresso machine for high-volume environments such as hotel restaurants, corporate cafeterias, and conference centers serving up to 300 drinks per day.
+    - **Unit Group**: Equipment Units
+    - **Default Unit**: Unit
+    - **Decimals Supported**: 0
 
     **Product 3:**
-    - **Name**: `Batch Brew Coffee Maker`
-    - **Product ID**: `BREW-STD`
-    - **Valid from**: Today's date
-    - **Description**: `High-capacity batch brew coffee maker for offices, conference rooms, and break rooms. Brews up to 3 gallons per hour.`
-    - **Unit group**: `Equipment Units`
-    - **Default unit**: `Unit`
-    - **Decimals supported**: `0`
+    - **Name**: Batch Brew Coffee Maker
+    - **Product ID**: BREW-STD
+    - **Valid From**: Today's date
+    - **Description**: High-capacity batch brew coffee maker for offices, conference rooms, and break rooms. Brews up to 3 gallons per hour.
+    - **Unit Group**: Equipment Units
+    - **Default Unit**: Unit
+    - **Decimals Supported**: 0
 
     **Product 4:**
-    - **Name**: `Equipment Service Contract`
-    - **Product ID**: `SVC-CONTRACT`
-    - **Valid from**: Today's date
-    - **Description**: `Monthly service and maintenance contract covering two scheduled preventive maintenance visits per year and unlimited on-call repair support during business hours.`
-    - **Unit group**: `Service Units`
-    - **Default unit**: `Month (flat rate)`
-    - **Decimals supported**: `0`
+    - **Name**: Equipment Service Contract
+    - **Product ID**: SVC-CONTRACT
+    - **Valid From**: Today's date
+    - **Description**: Monthly service and maintenance contract covering two scheduled preventive maintenance visits per year and unlimited on-call repair support during business hours.
+    - **Unit Group**: Service Units
+    - **Default Unit**: Month (flat rate)
+    - **Decimals Supported**: 0
 
 1. Return to the **Products, Families, and Bundles** list and confirm all four products show an **Active** status.
 
@@ -125,139 +125,139 @@ Now you'll add Contoso Coffee's four core offerings to the product catalog.
 
 A price list connects your products to specific prices. Contoso Coffee has one standard price list for North American clients billed in USD. You'll build it now.
 
-1. In **App Settings** > **Product catalog**, select **Price lists**.
+1. In **App Settings**, under **Product Catalog**, select **Price Lists**.
 
-1. Select **New** on the command bar.
+1. Select **+ New** on the command bar.
 
 1. Fill in the price list details:
-   - **Name**: `Contoso Coffee North America - USD`
+   - **Name**: Contoso Coffee North America - USD
    - **Start date**: Today's date
    - **End date**: Leave blank (this is Contoso Coffee's permanent standard list)
-   - **Currency**: `US Dollar`
+   - **Currency**: US Dollar
 
 1. Select **Save**.
 
-1. On the price list record, select the **Price List Items** tab, then select **New Price List Item** on the command bar.
+1. On the price list record, select the **Price List Items** tab, then select **+ New Price List Item** on the command bar.
 
 1. On the **General** tab, fill in:
-   - **Product**: `Espresso Machine - Standard`
-   - **Unit**: `Unit`
+   - **Product**: Espresso Machine - Standard
+   - **Unit**: Unit
+
+1. Select the **Pricing information** tab and enter:
+   - **Amount**: 3200.00
+
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Espresso Machine - Standard
+   - **Unit**: Month (lease)
 
 1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `3200.00`
+   - **Amount**: 145.00
 
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Espresso Machine - Standard`
-   - **Unit**: `Month (lease)`
-
-1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `145.00`
-
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Espresso Machine - Pro`
-   - **Unit**: `Unit`
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Espresso Machine - Pro
+   - **Unit**: Unit
 
 1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `5800.00`
+   - **Amount**: 5800.00
 
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Espresso Machine - Pro`
-   - **Unit**: `Year (lease)`
-
-1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `3180.00`
-
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Batch Brew Coffee Maker`
-   - **Unit**: `Unit`
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Espresso Machine - Pro
+   - **Unit**: Year (lease)
 
 1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `1400.00`
+   - **Amount**: 3180.00
 
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Batch Brew Coffee Maker`
-   - **Unit**: `Month (lease)`
-
-1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `65.00`
-
-1. Select **Save and close**, then select **+ New Price List Item**. On the **General** tab, fill in:
-   - **Product**: `Equipment Service Contract`
-   - **Unit**: `Year (flat rate)`
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Batch Brew Coffee Maker
+   - **Unit**: Unit
 
 1. Select the **Pricing Information** tab and enter:
-   - **Amount**: `1068.00`
+   - **Amount**: 1400.00
 
-1. Select **Save and close**.
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Batch Brew Coffee Maker
+   - **Unit**: Month (lease)
+
+1. Select the **Pricing Information** tab and enter:
+   - **Amount**: 65.00
+
+1. Select **Save & Close**, then select **+ New Price List Item**. On the **General** tab, fill in:
+   - **Product**: Equipment Service Contract
+   - **Unit**: Year (flat rate)
+
+1. Select the **Pricing Information** tab and enter:
+   - **Amount**: 1068.00
+
+1. Select **Save & Close**.
 
 1. Confirm that all seven price list items appear on the **Price List Items** tab of the **Contoso Coffee North America - USD** record.
 
 ## Task 4: Create a volume discount list
 
-Contoso Coffee offers volume discounts on equipment leases when a customer leases five or more units. Five to nine units gets a 5% discount; ten or more units gets 10%.
+Contoso Coffee offers volume discounts on equipment leases when a customer leases five or more units. Five to nine units get a 5% discount; ten or more units get a 10% discount.
 
-1. In **App Settings** > **Product catalog**, select **Discount lists**.
+1. In **App Settings**, under **Product Catalog**, select **Discount Lists**.
 
-1. Select **New** on the command bar.
+1. Select **+ New** on the command bar.
 
-1. Fill in:
-   - **Name**: `Equipment Lease Volume Discounts`
-   - **Type**: **Percentage**
+1. Fill in the discount list details:
+   - **Name**: Equipment Lease Volume Discounts
+   - **Type**: Percentage
+
+1. Select **Save**, or press **Ctrl+S** if the **Save** button is not available.
+
+1. Select **Related** > **Discounts**.
+
+1. In the **Discounts** section, select **+ New Discount**.
+
+1. Add the first discount tier with the following details:
+   - **Begin quantity**: 1
+   - **End quantity**: 4
+   - **Percentage**: 0
+
+1. Select **Save & Close**, then select **+ New Discount**. Add the second discount with the following details:
+   - **Begin quantity**: 5
+   - **End quantity**: 9
+   - **Percentage**: 5
+
+1. Select **Save & Close**, then select **+ New Discount**. Add the third discount with the following details:
+   - **Begin quantity**: 10
+   - **End quantity**: 9999
+   - **Percentage**: 10
 
 1. Select **Save**.
 
-1. Select **Related** and **Discounts.**
+1. Select **Price Lists** from the left menu.
 
-1. In the **Discounts** section, select **+ New discount**.
+1. Return to the **Contoso Coffee North America - USD** price list and select **Price List Items**.
 
-1. Add the first discount tier:
-   - **Begin quantity**: `1`
-   - **End quantity**: `4`
-   - **Percentage**: `0`
+1. Find the **Espresso Machine - Standard (Month (lease))** price list item and open it. Select the Open record icon (the pop-out at the far right of the row) to open it. Do not select the product name, as this opens the **Product** record instead of the **Price List Item** record.
 
-1. Select **Save and close**, then select **New Discount**. Add:
-   - **Begin quantity**: `5`
-   - **End quantity**: `9`
-   - **Percentage**: `5`
-
-1. Select **Save and close**, then select **New Discount**. Add:
-   - **Begin quantity**: `10`
-   - **End quantity**: `9999`
-   - **Percentage**: `10`
-
-1. Select **Save**.
-
-1. Select **Price lists** from the left menu.
-
-1. Return to the **Contoso Coffee North America - USD** price list and select **Price list items.**
-
-1. Find the **Espresso Machine - Standard (Month (lease))** price list item and open it. (To open it, select the pop-out at the very end of the view row - selecting the name of the Product opens the Product record, but we want to be on the Price List Item record.)
-
-1. In the **Discount list** field, select `Equipment Lease Volume Discounts`.
+1. In the **Discount list** field, select **Equipment Lease Volume Discounts**.
 
 1. Select **Save**.
 
 1. Repeat steps 13–15 for the **Espresso Machine - Pro (Year (lease))** and **Batch Brew Coffee Maker (Month (lease))** price list items.
 
-    Now when a rep adds leased equipment to an opportunity and the quantity reaches five or more units, the discount applies automatically.
+   Now when a rep adds leased equipment to an opportunity and the quantity reaches five or more units, the discount applies automatically.
 
 ## Task 5: Configure product catalog settings
 
 Before reps start using the catalog, you'll make a few global settings to streamline the experience.
 
-1. In **App Settings** > **Product catalog**, select **Product catalog settings**.
+1. In **App Settings**, under **Product Catalog**, select **Product Catalog Settings**.
 
 1. Configure the following settings:
-   - **Create products in active state**: Toggle **On** — new products will be immediately available without needing to be manually published each time.
+   - **Enhanced experience for adding products**: Toggle **On** — reps will see a grid where they can select and set the quantity for multiple products at once, rather than adding them one at a time.
+   - **Create product in active state**: Toggle **On** — new products will be immediately available without needing to be manually published each time.
    - **Allow selection of default pricelist**: Toggle **On** — Dynamics 365 will automatically suggest the right price list based on the territory.
-   - **Enhanced experience for adding products**: Toggle **On** — reps will see a grid where they can select and quantity multiple products at once, rather than adding them one at a time.
    - **Discount calculation method**: Set to **Line item** — the discount is applied to the total line amount after multiplying unit price × quantity.
 
-1. Select **Save**.
+1. If you changed any settings, select **Save**. If the settings were already in the required state, the **Save** button stays greyed out — this is expected, and you can continue.
 
 ## Summary
 
-The product catalog you've created will be used in Lab 05 when you add products to an opportunity. 
+The product catalog you've created will be used in Lab 05 when you add products to an opportunity.
 
 If you'd like to review your work, go to **App Settings** > **Families and products** to see your four published products, and **Price lists** to see the **Contoso Coffee North America - USD** list with its discount tiers applied.
 

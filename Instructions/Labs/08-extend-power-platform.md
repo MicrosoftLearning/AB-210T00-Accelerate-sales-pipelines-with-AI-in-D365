@@ -31,9 +31,11 @@ You'll create a flow that sends Marcus an email notification whenever a new oppo
 
 1. Open a new browser tab and go to `https://make.powerautomate.com`.
 
+1. Make sure you are in the **Sales Trial** environment. If not, select the environment picker in the top-right corner and switch to **Sales Trial**.
+
 1. Sign in with your lab credentials.
 
-1. Select **Create** in the left navigation.
+1. Select **+ Create** in the left navigation.
 
 1. Select **Automated cloud flow**.
 
@@ -44,30 +46,30 @@ You'll create a flow that sends Marcus an email notification whenever a new oppo
 1. Select **Create**.
 
 1. In the trigger card, configure the following:
-   - **Change type**: **Added**
-   - **Table name**: **Opportunities**
-   - **Scope**: **Organization**
+   - **Change type**: Added
+   - **Table name**: Opportunities
+   - **Scope**: Organization
 
 1. Select **+** under the trigger card to add a condition.
 
-1. Search for and select **Condition** (Control).
+1. Search for and select **Condition** from the **Control** section.
 
-1. In the condition:
-   - **Value (left side)**: Select the lightning bolt icon to use dynamic content and choose **Est. Revenue**
-   - **Operator**: **is greater than**
-   - **Value (right side)**: `50000`
+1. In the condition, configure the following:
+   - **Value (left side)**: Select the lightning bolt icon to use dynamic content and choose **Est. revenue**
+   - **Operator**: is greater than
+   - **Value (right side)**: 50000
 
 1. In the **True** branch (when the condition is true), select **+** to add an action.
 
-1. Search for and select **Send an email (V2)** from the **Office 365 Outlook** connector. (You may be prompted to sign in - select **Sign in** and follow the prompts to sign in with your credentials.)
+1. Search for and select **Send an email (V2)** from the **Office 365 Outlook** connector. (You may be prompted to sign in — select **Sign in** and follow the prompts to sign in with your credentials.)
 
 1. Fill in the email details:
     - **To**: Enter your lab user's email address (to simulate Marcus receiving the notification). This will likely start with MOD, so you can start typing MOD and select it when it appears.
-    - **Subject**: `High-value opportunity created: [Topic]`
+    - **Subject**: High-value opportunity created: [Topic]
     
-      To insert the opportunity name dynamically, select the field and add dynamic content: **Topic**.
+      To insert the opportunity name dynamically, place the cursor after **High-value opportunity created:** in the **Subject** field, select **Add dynamic content**, and then search for and select **Topic**.
 
-    - **Body**: 
+    - **Body**:
       ```
       Hi Marcus,
 
@@ -94,22 +96,23 @@ You'll create a flow that sends Marcus an email notification whenever a new oppo
 
    Power Automate puts the flow into listening mode and displays a message telling you to perform the trigger action.
 
-1. Switch to your Sales Hub browser tab, select **Opportunities** in the left navigation, and select **+ New**.
+1. Switch to your Sales Hub browser tab, on the **Sales** area, select **Opportunities** in the left navigation, and select **+ New**.
 
 1. Fill in the following fields:
-   - **Topic**: `Test - High-Value Flow Trigger`
-   - **Est. Revenue**: `75000` (you'll find this field in the header)
+   - **Topic**: Test - High-Value Flow Trigger
+   - **Est. Revenue**: 75000 (you'll find this field in the header)
    - **Est. Close Date**: any future date (this is also in the header)
 
 1. Select **Save** on the opportunity record.
 
 1. Return to the Power Automate tab. The flow detects the new record and begins running automatically. Watch each step — a green checkmark appears on each card as it succeeds.
 
-1. When the run completes, select **Done**, then close the Power Automate tab.
+1. When the run completes, close the Power Automate tab.
 
-1. Open a new browser tab and go to `https://outlook.office.com` to confirm you received an email with the subject line `High-value opportunity created:` followed by the opportunity name.
+1. Open a new browser tab and go to `https://outlook.office.com` to confirm you received an email with the subject line **High-value opportunity created:** followed by the opportunity name.
 
-    > **Note**: If any step shows a red X, select it to expand the error details. A common issue is a missing Outlook connection — reconnect by selecting **Sign in** in the action card.
+   > [!NOTE]
+   > If any step shows a red X, select it to expand the error details. A common issue is a missing Outlook connection — reconnect by selecting **Sign in** in the action card.
 
 ## Task 3: Configure a Copilot Studio agent for sales coaching
 
@@ -121,25 +124,27 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Sign in with your lab credentials.
 
+1. Make sure you are in the **Sales Trial** environment. If not, select the environment picker in the top-right corner and switch to **Sales Trial**.
+
 1. On the **Home** page, select **Agent** under **Start building from scratch**.
 
-1. Name the agent `Contoso Sales Coach` and select **Create.**
+1. Name the agent **Contoso Sales Coach** and select **Create**.
 
-1. In the **Instructions** section, enter:
+1. In the **Instructions** section, select **Edit** and enter the following instructions for the agent:
    `You are a sales coaching assistant for Contoso Coffee. You help sellers with product pitches, objection handling, competitive comparisons, and pricing guidance. Answer questions about commercial espresso machines, coffee makers, equipment leases, and service contracts. Be concise, friendly, and specific. Always tailor your advice to the customer's industry or location count if that information is provided.`
 
-1. Select **Save.**
+1. Select **Save**.
 
 1. Select the **Topics** tab in the top navigation to add specific response scenarios.
 
 1. Select **+ Add topic** > **From blank**.
 
-1. Name the topic: `Espresso machine lease pitch`.
+1. Enter the following name for the topic: `Espresso machine lease pitch`.
 
-1. In the **Describe what this topic does** field, enter:
+1. In the **Describe what the topic does** field, enter:
    `Use this topic when a seller asks for help pitching an equipment lease, asks for espresso machine talking points, or wants to know what to say when discussing leasing options with a customer.`
 
-1. Select **+** and select **Send a message**. In the **Message** node that appears in the conversation designer, enter:
+1. Select **+** below the trigger node and select **Send a message**. In the **Message** node that appears in the conversation designer, enter:
 
     ```
     Here's Contoso Coffee's standard equipment lease pitch:
@@ -155,7 +160,7 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Select **Save**.
 
-1. Select **back** to return to the list of tpics.
+1. Select **Back** to return to the list of topics.
 
 1. Add one more topic. Select **+ Add topic** > **From blank**.
 
@@ -164,7 +169,7 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 1. In the **Describe what this topic does** field, enter:
    `Use this topic when a seller asks how to respond to a pricing objection, price pushback, or a customer who says the product is too expensive.`
 
-1. In the message node, enter:
+1. Select **+** below the trigger node and select **Send a message**. In the **Message** node, enter the following:
 
     ```
     When a prospect pushes back on price, try this:
@@ -179,7 +184,7 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Select **Save**.
 
-1. In the test panel, type `how do I pitch a lease` and confirm the agent responds with the espresso machine lease pitch you defined.
+1. In the test pane, type `how do I pitch a lease` and confirm the agent responds with the espresso machine lease pitch you defined.
 
 1. Type `they said it's too expensive` and confirm the pricing objection response appears.
 
@@ -191,7 +196,8 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Select **No authentication**, then select **Save** and select **Save** again.
 
-   > **Note**: This setting allows the Demo Website channel to work in a trial environment without requiring end-user sign-in. For production deployments, you would configure an appropriate authentication provider.
+   > [!NOTE]
+   > This setting allows the Demo Website channel to work in a trial environment without requiring end-user sign-in. For production deployments, you would configure an appropriate authentication provider.
 
 1. Close the Settings panel and select **Publish** in the top navigation bar.
 
@@ -199,7 +205,8 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Wait for the publish confirmation message.
 
-    > **Note**: Embedding a custom Copilot Studio agent directly in the Dynamics 365 Sales Hub sidebar requires environment-level admin configuration that is outside the scope of this lab. 
+   > [!NOTE]
+   > Embedding a custom Copilot Studio agent directly in the Dynamics 365 Sales Hub sidebar requires environment-level admin configuration that is outside the scope of this lab.
 
 **Congratulations!** You've worked through all nine of Contoso Coffee's requirements. Starting from a blank Dynamics 365 environment, you:
 
