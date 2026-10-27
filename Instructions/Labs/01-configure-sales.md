@@ -145,7 +145,7 @@ Contoso wants all records to have consistent, recognizable identifiers so that q
 
 1. Change the **Prefix** value to **CCQ** (Contoso Coffee Quote).
 
-1. Confirm the **Suffix length** is set to **6**.
+1. Confirm the **Suffix Length** is set to **6**.
 
 1. Find the **Orders** row and change the **Prefix** to **CCO** (Contoso Coffee Order).
 
@@ -207,6 +207,8 @@ One of the biggest time-savers in Dynamics 365 Sales is Copilot's ability to sum
    > [!NOTE]
    > The default value may vary by environment. Setting it to **On** enables Copilot features across all apps in the environment.
 
+1. Select **Continue**.
+
 1. Select **Save**.
 
 1. Select the **Leads** tab.
@@ -220,6 +222,8 @@ One of the biggest time-savers in Dynamics 365 Sales is Copilot's ability to sum
    - **Rating**
 
     These fields help a rep quickly assess the size and potential of a lead without opening every tab.
+
+1. Select **Add**.
 
 1. Select **Save**.
 

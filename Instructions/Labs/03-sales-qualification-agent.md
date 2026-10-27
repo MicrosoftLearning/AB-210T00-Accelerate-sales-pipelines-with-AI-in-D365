@@ -32,7 +32,7 @@ The agent prerequisites are checked from within Sales Hub itself — the wizard 
 
 1. A **Prerequisites** page opens listing all required items. All of these should have a **green check mark** next to them by default - that means that the setting is enabled and you don't need to take any extra action. If you do not see a green check mark, select **Set up** to enable these features. (Ask your instructor if you need help.)
    - **Microsoft Copilot Studio capacity**: Select **Set up** to open the Power Platform admin center and allocate Copilot Studio message capacity for your environment.
-   - **Move data across regions**: Select **Accept terms** to open the Power Platform admin center and enable **Move data across regions** under **Generative AI features**.
+   - **Move data across regions**: Select **Accept terms** to open the Power Platform admin center and enable **Microsoft 365 services** under **Generative AI features**.
    - **AI prompts**: Confirm that **AI prompts** is enabled in the same **Features** page.
 
 1. Once all prerequisites have a green check mark, the **Create** button on the AI agents page becomes available. Select **Create**.
@@ -101,7 +101,7 @@ You're now on the agent configuration page. Work through each section from top t
 
 1. In the **Agent profile** section, fill in the following:
    - **Agent name**: Contoso Coffee Lead Research Agent
-   - **What should this agent do**: Research inbound trade show leads, evaluate them against Contoso Coffee's target customer profile, and prepare research summaries and draft outreach emails for sellers.
+   - **What should this agent do ?**: Research inbound trade show leads, evaluate them against Contoso Coffee's target customer profile, and prepare research summaries and draft outreach emails for sellers.
    - **Agent user**: Select the **Contoso Coffee Sales Qualification Agent** app user you created in Task 3. (If it doesn't show up as an option, try refreshing your browser.)
    - **Agent language**: English
 
@@ -178,10 +178,10 @@ You're now on the agent configuration page. Work through each section from top t
 
 1. Select **Start agent** in the upper-right corner, and then select **Start agent** again to confirm.
 
-1. Select **Go to agent list**.
+1. Select **Go to agent list** when it´s complete.
 
    > [!NOTE]
-   > Starting the agent may take several minutes. Wait for the status to change from **Saving** to **On** before proceeding.
+   > Starting the agent may take several minutes. Wait for the status to change from **Starting agent** to **On** before proceeding.
 
 ## Task 5: View a lead being worked on by the agent
 
@@ -216,7 +216,7 @@ You're now on the agent configuration page. Work through each section from top t
 
 ## Task 6: See agent insights
 
-1. In the bottom-left corner, select the area selector and switch it to **App Settings**. Under **General settings**, select **Dynamics 365 AI hub**.
+1. In the bottom-left corner, select the area selector and switch it to **App Settings**. Under **General settings**, select **Dynamics 365 AI hub** > **Go to Dynamics 365 AI hub**.
 
 1. On the **AI optimization hub** tile, select **See insights**.
 

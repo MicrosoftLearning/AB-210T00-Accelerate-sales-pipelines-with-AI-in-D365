@@ -39,7 +39,7 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. In Sales Hub, select **Change area** > **App Settings**.
 
-1. Go to **General settings** > **Dynamics 365 AI hub** > **Create and manage agent**.
+1. Go to **General settings** > **Dynamics 365 AI hub** > **Create and manage agents**.
 
 1. Select **Create**. In the **Create an AI agent** dialog, under **Sales Opportunity Agent**, select **Choose**.
 
@@ -232,7 +232,7 @@ The Sales Close Agent sends emails on behalf of sellers, so it requires a dedica
 
 1. Select **Save**, then select **Approve Email**. Select **OK** to confirm.
 
-1. Select **Test & Enable Mailbox** and select **OK** to start the test.
+1. Select **Test & Enable Mailboxes** and select **OK** to start the test.
 
 1. Wait for the configuration status to show **Success** for both incoming and outgoing email.
 

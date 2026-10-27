@@ -103,8 +103,6 @@ Jordan collected 47 cards at the conference, but you'll work with a small repres
    - **Number of Employees**: No. of Employees
    - **Rating**: Rating (Option set — leave all option mappings as default)
 
-1. Select **Next**.
-
 1. Select **Finish**.
 
 1. You're still in Advanced Settings. Wait on the Imports page and select the **Refresh** button on the command bar after about 30 seconds. When the import finishes, check the **Successes** and **Errors** columns.
@@ -139,7 +137,7 @@ Now that the leads are in the system, you'll use Copilot to review one of the ho
    - **Description**: Follow up from **FoodService Summit Denver**. Confirm equipment needs and site count.
    - **Duration**: 30 minutes
 
-1. Select **Save and close**.
+1. Select **Save and Close**.
 
    The call activity now appears in Ben's timeline, making it visible to anyone on Jordan's team who might cover for them.
 

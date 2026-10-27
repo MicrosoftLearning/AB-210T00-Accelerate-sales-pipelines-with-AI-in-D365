@@ -64,13 +64,16 @@ You'll create a flow that sends Marcus an email notification whenever a new oppo
 1. Search for and select **Send an email (V2)** from the **Office 365 Outlook** connector. (You may be prompted to sign in — select **Sign in** and follow the prompts to sign in with your credentials.)
 
 1. Fill in the email details:
-    - **To**: Enter your lab user's email address (to simulate Marcus receiving the notification). This will likely start with MOD, so you can start typing MOD and select it when it appears.
-    - **Subject**: High-value opportunity created: [Topic]
-    
+
+   - **To**: Enter your lab user's email address (to simulate Marcus receiving the notification). This will likely start with MOD, so you can start typing MOD and select it when it appears.
+
+   - **Subject**: High-value opportunity created: [Topic]
+
       To insert the opportunity name dynamically, place the cursor after **High-value opportunity created:** in the **Subject** field, select **Add dynamic content**, and then search for and select **Topic**.
 
-    - **Body**:
-      ```
+   - **Body**:
+
+      ```text
       Hi Marcus,
 
       A new high-value opportunity has been created and may need your attention.
@@ -83,16 +86,16 @@ You'll create a flow that sends Marcus an email notification whenever a new oppo
 
       This notification was sent automatically by Dynamics 365 Sales.
       ```
-      
+
       Replace the bracketed placeholders with the corresponding dynamic content fields.
 
-1. Select **Save** in the top-right corner of Power Automate.
+1. Select **Save draft** on the command bar at the top of Power Automate.
 
 ## Task 2: Test the flow
 
 1. In the Power Automate designer, select **Test** in the top-right corner.
 
-1. In the **Test Flow** pane, select **Manually**, then select **Test**.
+1. In the **Test Flow** pane, select **Manually**, then select **Publish & Test**.
 
    Power Automate puts the flow into listening mode and displays a message telling you to perform the trigger action.
 
@@ -124,6 +127,12 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Sign in with your lab credentials.
 
+1. In the bottom-left corner of the page, select the ellipsis **(...)** next to your username and select **Open classic experience**.
+
+1. In the **Share feedback before opening the previous experience?** dialog, select **Skip feedback**. The classic experience opens in a new browser tab.
+
+1. If the **Welcome to Microsoft Copilot Studio** dialog appears, select **Get Started** and skip any additional welcome messages.
+
 1. Make sure you are in the **Sales Trial** environment. If not, select the environment picker in the top-right corner and switch to **Sales Trial**.
 
 1. On the **Home** page, select **Agent** under **Start building from scratch**.
@@ -131,7 +140,10 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 1. Name the agent **Contoso Sales Coach** and select **Create**.
 
 1. In the **Instructions** section, select **Edit** and enter the following instructions for the agent:
-   `You are a sales coaching assistant for Contoso Coffee. You help sellers with product pitches, objection handling, competitive comparisons, and pricing guidance. Answer questions about commercial espresso machines, coffee makers, equipment leases, and service contracts. Be concise, friendly, and specific. Always tailor your advice to the customer's industry or location count if that information is provided.`
+
+   ``` text
+   You are a sales coaching assistant for Contoso Coffee. You help sellers with product pitches, objection handling, competitive comparisons, and pricing guidance. Answer questions about commercial espresso machines, coffee makers, equipment leases, and service contracts. Be concise, friendly, and specific. Always tailor your advice to the customer's industry or location count if that information is provided.
+   ```
 
 1. Select **Save**.
 
@@ -142,21 +154,24 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 1. Enter the following name for the topic: `Espresso machine lease pitch`.
 
 1. In the **Describe what the topic does** field, enter:
-   `Use this topic when a seller asks for help pitching an equipment lease, asks for espresso machine talking points, or wants to know what to say when discussing leasing options with a customer.`
+
+   ```text
+   Use this topic when a seller asks for help pitching an equipment lease, asks for espresso machine talking points, or wants to know what to say when discussing leasing options with a customer.
+   ```
 
 1. Select **+** below the trigger node and select **Send a message**. In the **Message** node that appears in the conversation designer, enter:
 
-    ```
-    Here's Contoso Coffee's standard equipment lease pitch:
+   ```text
+   Here's Contoso Coffee's standard equipment lease pitch:
 
-    Lead with the outcome: "We help businesses like yours serve better coffee without a large upfront investment — a 36-month lease means no capital expenditure and predictable monthly costs."
+   Lead with the outcome: "We help businesses like yours serve better coffee without a large upfront investment — a 36-month lease means no capital expenditure and predictable monthly costs."
 
-    Address the pain point: Ask "What does your current equipment situation look like? Most clients we work with are dealing with aging machines and expensive reactive repairs."
+   Address the pain point: Ask "What does your current equipment situation look like? Most clients we work with are dealing with aging machines and expensive reactive repairs."
 
-    Handle the risk concern: "Every lease includes our monthly service contract — two preventive maintenance visits a year and unlimited on-call support during business hours. If it breaks, we fix it."
+   Handle the risk concern: "Every lease includes our monthly service contract — two preventive maintenance visits a year and unlimited on-call support during business hours. If it breaks, we fix it."
 
-    Close with proof: "We recently leased 12 Espresso Machine - Pro units to a restaurant group in the Southwest. Their beverage revenue went up 18% in the first quarter after installation — happy to share their feedback."
-    ```
+   Close with proof: "We recently leased 12 Espresso Machine - Pro units to a restaurant group in the Southwest. Their beverage revenue went up 18% in the first quarter after installation — happy to share their feedback."
+   ```
 
 1. Select **Save**.
 
@@ -171,7 +186,7 @@ You'll create a lightweight Copilot Studio agent that sellers can ask these ques
 
 1. Select **+** below the trigger node and select **Send a message**. In the **Message** node, enter the following:
 
-    ```
+    ```text
     When a prospect pushes back on price, try this:
 
     1. Acknowledge: "I hear you — budget is always a consideration."
