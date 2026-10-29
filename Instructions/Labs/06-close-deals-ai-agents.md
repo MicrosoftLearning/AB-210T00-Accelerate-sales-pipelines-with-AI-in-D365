@@ -1,45 +1,50 @@
 ---
 lab:
-    title: 'Lab 6 - Close deals using AI agents'
-    description: "Configure the Sales Opportunity Agent and Sales Close Agent in Dynamics 365 Sales to automatically research pipeline risk and send follow-up emails on Contoso Coffee's behalf."
-    duration: '45 minutes'
+    title: 'Lab 6 - Close deals using the Sales Opportunity Agent'
+    description: "Configure the Sales Opportunity Agent in Dynamics 365 Sales to research pipeline risk and suggest next actions for Contoso Coffee's opportunities."
+    duration: '25 minutes'
     level: 300
     islab: true
 ---
 
-# Lab 6 - Close deals using AI agents
+# Lab 6 - Close deals using the Sales Opportunity Agent
 
-> [!NOTE]
-> The Sales Opportunity Agent and Sales Close Agent are **preview features** that require a Dynamics 365 Sales Premium license. The Sales Close Agent additionally requires Microsoft Entra Application Developer permissions and Exchange Administrator access to complete the prerequisite setup. These features may not be fully available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the required features aren't available in your environment, review the steps to understand the configuration process and proceed to Lab 07.
+> **Note**: The Sales Opportunity Agent is a **preview feature** that requires a Dynamics 365 Sales Premium license. This feature may not be fully available in all trial environments. **This lab is self-contained** — no other lab depends on completing it. If the required feature isn't available in your environment, review the steps to understand the configuration process and proceed to Lab 07.
 
 Last quarter, three of Contoso Coffee's biggest deals stalled in the Proposal stage and were eventually lost. None of the reps were managing a bad pipeline — they were just overloaded. An equipment deal with multiple stakeholders can go quiet for two weeks, and by the time a rep notices, the prospect has moved on.
 
-Dynamics 365 Sales includes two AI agents designed to fix this:
+The **Sales Opportunity Agent** in Dynamics 365 Sales monitors your open pipeline, researches key accounts using Bing and CRM data, and surfaces risk signals and next-action suggestions on each rep's opportunity records.
 
-- The **Sales Opportunity Agent** monitors your open pipeline, researches key accounts using Bing and CRM data, and surfaces risk signals and next-action suggestions on each rep's opportunity records.
-- The **Sales Close Agent** goes further: it autonomously sends personalized follow-up emails from a shared mailbox on behalf of the seller, monitors replies, and escalates to the rep when a human response is needed.
+In this lab, you'll configure the Sales Opportunity Agent for Contoso Coffee's pipeline.
 
-In this lab, you'll configure both agents for Contoso Coffee's pipeline.
-
-This lab should take approximately **45** minutes to complete.
+This lab should take approximately **25** minutes to complete.
 
 ## Task 1: Access the Dynamics 365 AI Hub
 
-1. In Sales Hub, under **Change area** at the bottom of the left navigation, select **App Settings**.
+Before you begin, confirm that you have the Power Platform administrator role, admin permissions in Dynamics 365 Sales, and a Copilot Studio license. The Sales Hub app must use the modern UI, and your organization's data policies must allow the Microsoft Copilot Studio, Direct Line channels in Copilot Studio, and Knowledge source with public websites and data connectors.
 
-1. Go to **General settings** > **Dynamics 365 AI hub**.
+1. In Sales Hub, select the **Change area** at the bottom of the left navigation and select **App Settings**.
+
+1. Go to **General** > **Overview** > **Dynamics 365 AI hub**.
 
 1. In the **Agent manager** section, select **Create and manage agents**.
 
+1. If the common **Prerequisites** page appears, review the following items:
+   - **Microsoft Copilot Studio capacity**: Confirm that a green checkmark and **Done** appear.
+   - **Move data across regions**: Confirm that a green checkmark and **Done** appear.
+   - **AI prompts**: Confirm that a green checkmark appears. If it doesn't, select **Set up** and set the **AI prompts** toggle in **Settings** to **On**.
+
+1. Return to the prerequisites page and select **Refresh**. Confirm that all common prerequisites are marked as **Done**. The **Create** option remains disabled until these prerequisites are complete.
+
 ## Task 2: Configure the Sales Opportunity Agent
 
-The Sales Opportunity Agent researches open opportunities and surfaces risk signals for reps. It has lighter infrastructure requirements than the Sales Close Agent — it reads CRM records and public information but doesn't send email, so no Azure app registration or shared mailbox is needed.
+The Sales Opportunity Agent researches open opportunities and surfaces risk signals for reps. It reads CRM records and public information but doesn't send email, so no Azure app registration or shared mailbox is needed.
 
 ### Open the agent creation flow
 
 1. In Sales Hub, select **Change area** > **App Settings**.
 
-1. Go to **General settings** > **Dynamics 365 AI hub** > **Create and manage agents**.
+1. Go to **General** > **Overview** > **Dynamics 365 AI hub** > **Create and manage agent**.
 
 1. Select **Create**. In the **Create an AI agent** dialog, under **Sales Opportunity Agent**, select **Choose**.
 
@@ -62,7 +67,7 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 ### Configure the agent profile
 
-1. In the **General** settings section, select **Agent profile**. (It should open here by default.)
+1. In the **General** settings section, select **Agent profile**.
 
 1. Fill in the following fields:
    - **Agent name**: Contoso Coffee Pipeline Watch
@@ -75,14 +80,14 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 1. Fill in the following fields:
    - **Company name**: Contoso Coffee
    - **Company website**: `https://www.contoso.com`
-   - **Value proposition**: Commercial espresso machines and coffee equipment on flexible annual lease terms, with dedicated account management and same-day service response for multi-location hospitality and restaurant clients.
+   - **Value proposition of what you sell to the selected opportunities**: `Commercial espresso machines and coffee equipment on flexible annual lease terms, with dedicated account management and same-day service response for multi-location hospitality and restaurant clients.`
 
    > [!NOTE]
    > The value proposition tells the agent what to look for when researching accounts. A specific, product-focused description produces more relevant insights than a generic one.
 
 ### Configure selection criteria
 
-1. In the **Guidance** section, select **Selection criteria**.
+1. In the **General** section, select **Selection criteria**.
 
 1. Fill in:
    - **Segment name**: Contoso Coffee Open Opportunities
@@ -94,9 +99,11 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. Select the **Consider opportunities created in the last** checkbox and enter **90** days to include recently created opportunities.
 
+1. Select **Preview** and confirm that the sample contains opportunities you expect the agent to research. If no opportunities match, check that your sample records are open, have an estimated revenue of at least **10000**, and were created within the last **90** days.
+
 ### Configure refresh frequency
 
-1. In the **Advanced** section, select **Refresh frequency**. Review the default settings — this controls how often the agent updates its research for each opportunity.
+1. In the **Advanced** section, select **Refresh frequency**. Review the default setting. This controls how often the agent updates its research for each opportunity.
 
 ### Configure opportunity assessment
 
@@ -124,13 +131,13 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. In the **Advanced** section, select **Risk criteria**.
 
-1. Review the list of risk criteria by expanding the **Default risk criteria** section — all are enabled by default. Each criterion has a configurable threshold. For Contoso Coffee, review the following and adjust if needed:
+1. Expand **Default risk criteria**. Confirm that **Missing BANT info** is enabled under **Use in assessment**. This criterion flags deals missing Budget, Authority, Need, or Timeline information by the configured stage.
 
-   | Criterion | Default action |
-   | --- | --- |
-   | **No recent engagement** | Keep enabled. Equipment lease deals often go quiet — this surfaces deals with no contact for the default window. |
-   | **Stalled in stage** | Keep enabled. Consider reducing the threshold (for example, 14 days) to catch deals that stall in the Propose stage. |
-   | **Missing BANT info** | Keep enabled. Flags deals missing Budget, Authority, Need, and Timeline information. |
+1. For **Stalled in stage**, turn on the **Use in assessment** toggle and configure the following:
+   - **Opportunity is in**: **Propose**
+   - **Stage for**: **14** days
+
+    This criterion flags opportunities that remain in the Propose stage longer than the configured threshold. Leave the other risk criteria at their defaults.
 
 1. Select **Importance criteria**. Review the six criteria and confirm that the following are enabled:
 
@@ -143,9 +150,7 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 ### Save and start the agent
 
-1. Before saving, review the left navigation panel and confirm that each section shows a green checkmark:
-   - **General**: Agent profile, Company info, Selection criteria
-   - **Advanced**: Refresh frequency, Opportunity assessment, Research, Risk criteria, Importance criteria, Connected skills
+1. Before you save, review the left navigation panel and confirm that each section shows a green checkmark.
 
     If any section is missing a checkmark, select it and complete the required fields before continuing.
 
@@ -153,228 +158,21 @@ The Sales Opportunity Agent researches open opportunities and surfaces risk sign
 
 1. Select **Start agent** to activate the Sales Opportunity Agent. Confirm by selecting **Start agent** again.
 
-   The agent is now active. Reps will see an **Opportunity research** section on their opportunity records, populated with account news, stakeholder research, and engagement risk signals.
+   The agent begins processing opportunities that match your selection criteria. After research is available, reps can open it from the **Summary** section on an opportunity record by selecting **See full research**.
 
-1. It may take a while for your agent to start. In the meantime, select **Go to agent list** and continue to Task 3.
+## Task 3: Review agent activity
 
-## Task 3: Set up prerequisites for the Sales Close Agent
+1. In Sales Hub, select **Change area** > **Sales**, then select **Opportunities**.
 
-The Sales Close Agent sends emails on behalf of sellers, so it requires a dedicated Azure identity, a shared Exchange mailbox, and server-side synchronization. All four prerequisites are managed from within the agent settings page — each has a **Set up** button that launches the correct tool, and a **Mark as done** checkbox to confirm completion before proceeding.
+1. From the views dropdown, select **My top opportunities from AI agent**. This view lists researched opportunities with high or medium importance. Open an opportunity that matches the selection criteria you configured.
 
-### Open the Sales Close Agent settings
+   > **Note**: If the view is empty, the agent may not have completed its initial research, or no researched opportunities have high or medium importance. Return to a view of open opportunities and open a record that matched your selection criteria preview. If research isn't available yet, return after the agent processes the record.
 
-1. In **App Settings**, select **Dynamics 365 AI hub**, then select **Create and manage agents**.
+1. In the **Summary** section at the top of the opportunity record, select **See full research**.
 
-1. Select **Create**. Under **Sales Close Agent**, select **Choose**.
+1. On the **Opportunity research** page, review the opportunity overview, importance and risk indicators, and available stakeholder, competitor, and account insights.
 
-    The **Prerequisites** page opens with four required steps.
+   > **Note**: If you enabled Microsoft 365 Services, a banner prompts the opportunity owner to grant permission for the agent to access their Microsoft 365 emails. Review the consent information before you grant permission. Email-based insights require relevant customer emails and may take additional time to appear.
 
-### Create the Azure app registration
-
-1. In the **Create app in Azure** section, select **Set up**.
-
-   This opens the app registration page in Microsoft Entra ID.
-
-1. Select **+ New registration** and fill in:
-   - **Name**: Contoso Coffee Sales Close Agent
-   - **Supported account types**: Single tenant only - Contoso
-
-1. Select **Register**. Azure registers the app and may redirect you to the app overview page, or back to the App registrations list.
-
-1. If you aren't already on the app overview page, select **Microsoft Entra ID** from the left navigation. Select the number next to **Applications**, then select the **All applications** tab. Select **Contoso Coffee Sales Close Agent** to open it.
-
-1. Copy the **Application (client) ID** value and save it somewhere accessible (such as Notepad). You'll need this shortly.
-
-1. Return to the **Prerequisites** page in Sales Hub and select the **Mark as done** checkbox for **Create app in Azure**.
-
-### Create a shared mailbox
-
-1. In the **Create shared mailbox** section, select **Set up**.
-
-   This opens the Exchange admin center.
-
-1. Go to **Recipients** > **Mailboxes** and select **+ Add a shared mailbox**.
-
-1. Fill in the following fields:
-   - **Display name**: Contoso Coffee Sales Agent
-   - **Email address**: `sales-agent@<your-domain>`
-
-1. Select **Create**.
-
-1. Return to the **Prerequisites** page and select **Mark as done** for **Create shared mailbox**.
-
-### Create an app user in Dataverse
-
-1. In the **Create an app user in Dataverse** section, select **Set up**.
-
-   This opens the Power Platform admin center.
-
-1. Select your environment, then go to **Settings** > **Users + permissions** > **Application users**.
-
-1. Select **+ New app user**. In the **Create a new app user** pane:
-   - Select **+ Add an app** and enter the **Application (client) ID** you copied from Azure. (If you see the app in the list, you can select it there.) Select **Add**.
-   - Set the business unit to the root business unit.
-   - Select the pencil icon to add a security role. Set the security role to **AISalesPerson** and select **Save**, then **Save** again to confirm the role assignment.
-
-1. Select **Create**.
-
-1. Return to the **Prerequisites** page and select **Mark as done** for **Create app user in Dataverse**.
-
-### Configure server-side synchronization
-
-1. In the **Configure server side sync** section, select **Set up**.
-
-   This opens the **My Active Mailboxes** view in Dynamics 365 Advanced Settings.
-
-1. Change the view to **All Mailboxes** and open the mailbox for the app user you just created (**Contoso Coffee Sales Close Agent**).
-
-1. Replace the email address with the shared mailbox address.
-
-1. Select **Save**, then select **Approve Email**. Select **OK** to confirm.
-
-1. Select **Test & Enable Mailboxes** and select **OK** to start the test.
-
-1. Wait for the configuration status to show **Success** for both incoming and outgoing email.
-
-1. Return to the **Prerequisites** page and select **Mark as done** for **Configure server side sync**.
-
-1. Select **Continue**.
-
-## Task 4: Configure and start the Sales Close Agent
-
-With all prerequisites complete, configure the agent's behavior.
-
-### Agent profile and products
-
-1. In the **General** settings section, select **Agent profile** and fill in:
-   - **Agent name**: Contoso Coffee Follow-up Agent
-   - **Agent user**: Select the app user you created in Task 3 (**Contoso Coffee Sales Close Agent**). If it isn't showing up, return to the Agent manager and refresh - it may take a few minutes.
-   - **Agent language**: English
-   - **Email signature**: Select **Modify signature**. Edit the default signature in the editor to reflect Contoso Coffee's brand, and select **Save & Close** when done:
-
-     ```
-     Contoso Coffee — Fueling Great Workdays
-     Commercial Espresso & Coffee Equipment | Annual Lease Programs
-     Questions? We'd love to chat over coffee. https://www.contoso.com
-     ```
-
-   - **AI Disclaimer**: Replace the default disclaimer to match Contoso's brand by entering the following text:
-
-     `P.S. This message was brewed by an AI assistant — no caffeine required. A real human from the Contoso Coffee team is always happy to chat if you'd prefer.`
-
-1. In the **General** settings section, select **Products** and configure the following:
-
-   - **Products**: Select the following four products from the dropdown (created in Lab 04):
-     - Batch Brew Coffee Maker
-     - Espresso Machine - Pro
-     - Espresso Machine - Standard
-     - Equipment Service Contract
-
-     After selecting the products, they'll appear in red — the agent requires a product page URL for each one, which wasn't configured in Lab 04. Select **Add missing info** and fill in the following URLs:
-
-     | Product | URL |
-     | --- | --- |
-     | Batch Brew Coffee Maker | `http://www.contoso.com/batch` |
-     | Espresso Machine - Pro | `http://www.contoso.com/pro` |
-     | Espresso Machine - Standard | `http://www.contoso.com/standard` |
-     | Equipment Service Contract | `http://www.contoso.com/service` |
-
-     Select **Update** to save the changes.
-
-   > [!NOTE]
-   > These URLs use http://contoso.com, which redirects safely to microsoft.com in a trial environment — they serve as placeholder product page links for the agent to include in outreach emails.
-
-   - **Value proposition of your product**: Enter a value proposition that explains why a customer should choose Contoso Coffee's equipment:
-
-     `Commercial-grade espresso machines built for high-volume hospitality environments. Available on flexible annual lease terms with same-day service response and dedicated account management.`
-
-   - **What should we use to search your product knowledge?**: Select up to three fields the agent uses to match relevant product documentation. Select **Product** and **Description**.
-
-   - **Where do you store customer friendly product name?**: Select **Name**.
-
-### Configure target customers
-
-1. In the **Guidance** section, select **Target customer**.
-
-1. For **Record type**, select **Opportunity**.
-
-1. Under **Filter conditions**, add:
-   - **Status** equals **Open**
-   - **Est. revenue** is greater than or equal to **10000**
-   - **Email Address** **contains data** (required — the agent can only contact customers with a valid email address)
-
-1. Select **Preview** to confirm the agent is targeting the right records.
-
-### Configure email delivery
-
-1. In the **Guidance** section, select **Email delivery**.
-
-1. Review the compliance profile. The default profile is sufficient for most environments.
-
-### Configure email content
-
-1. In the **Guidance** section, select **Email content**.
-
-1. Under **Outreach email templates**, select **Choose template** to pick an existing email template.
-
-1. Select **Meeting for product demo requests - introductory email**. (If it isn't available in your environment, you can pick any available template.)
-
-1. Under **Tone for emails**, enter the following prompt:
-
-    `Professional and helpful. Reference the customer's commercial coffee equipment needs. Don't be pushy. Close with a single clear call to action — a meeting or a product demo.`
-
-1. Select **Save**.
-
-### Configure knowledge sources
-
-1. In the **Knowledge** section, select **Knowledge sources**.
-
-1. Review the **Agent playbook** section. The **Default Agent Playbook** is already uploaded and configured — no changes are needed.
-
-1. In the **Product documentation** section, select **Manage**.
-
-   This opens Microsoft Copilot Studio in a new browser tab. If you're prompted to select a Team, select **start trial** and follow the wizard to create a trial. If prompted for your phone number, you can enter `1234567891`. If you already have a license for Microsoft Copilot Studio, navigate to **https://copilotstudio.microsoft.com/**, select the environment picker in the upper-right and confirm that **Sales Trial** environment is selected.
-   
-   > [!NOTE]
-   > If Copilot Studio doesn't load in a new tab, go to the Power Platform admin center and open the **Sales Trial** environment. Copy the **Environment ID** and then append it to the Copilot Studio URL in the following format: `https://copilotstudio.microsoft.com/environments/<Environment ID>`. Replace `<Environment ID>` with the ID of your Sales Trial environment.
-
-1. Select **Agents** in the left navigation, then select **Sales Close Agent**.
-
-1. In the agent's **knowledge** section, select **+ Add knowledge**, then select **Public websites**.
-
-1. Enter `https://contoso.com` and select **Add**.
-
-1. Select **Add to agent**.
-
-1. Select **Publish**, then select **Publish** again to apply the changes.
-
-   > [!NOTE]
-   > You must publish in Copilot Studio for the knowledge source to take effect. The agent cannot start until at least one product documentation source is published.
-
-1. Return to the Sales Close Agent **Knowledge sources** tab in Sales Hub and select **Save**.
-
-1. When you're satisfied with the configuration, select **Start agent**. On the confirmation dialog, select **Start agent** again.
-
-1. Select **Go to agent list** to return to the agent list.
-
-   The Sales Close Agent is now active. It selects opportunities matching your target criteria, sends personalized outreach emails from the shared mailbox, monitors replies, and escalates to the rep when a human response is needed.
-
-## Task 5: Review agent activity
-
-1. In Sales Hub, at the bottom of the left navigation, select **Sales**, navigate to **Opportunities**, and open any open opportunity.
-
-1. Scroll to the **Opportunity research** section. This is where the Sales Opportunity Agent surfaces account research, recent news, and engagement risk signals for each deal.
-
-1. Under **Customers**, select **Contacts**.
-
-1. From the view selector, choose **Contacts from Sales Close Agent**.
-
-1. Open a contact that has been processed by the Sales Close Agent.
-
-1. Review the **Timeline** to view the actions performed by the Sales Close Agent on the contact record.
-
-   > [!NOTE]
-   > In a trial environment, the agents might not have processed any records yet. Agent-generated insights and processed records appear only after the agents complete their scheduled runs. If no records are available in the Contacts from Sales Close Agent view, return later after the agents have had time to process customer records.
-
-You've configured two AI agents that address Contoso Coffee's pipeline risk problem. The Sales Opportunity Agent ensures no deal goes unresearched. The Sales Close Agent ensures no follow-up falls through the cracks — without adding to the rep's workload.
+You've configured the Sales Opportunity Agent to research Contoso Coffee's open opportunities and surface pipeline risks. Reps can use these insights to prioritize deals that need attention and plan their next actions.
 
